@@ -1,0 +1,2 @@
+<DIV ...>
+ALIGN="LEFT/CENTER/RIGHT/JUSTIFY",Text alignment  

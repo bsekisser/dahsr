@@ -1,0 +1,22 @@
+<IMG ...> "Image:
+ALIGN = LEFT | RIGHT | TOP | TEXTTOP | MIDDLE | ABSMIDDLE | BOTTOM | ABSBOTTOM | BASELINE how text should flow around the picture
+ALT: text to show if you don't show the picture
+BORDER: border around the picture
+CONTROLS: show the buttons which control the movie
+DYNSRC: play a movie file
+HEIGHT: how tall is the picture
+HSPACE: horizontal distance between the picture and the text
+ISMAP: is this a clickable map?
+LONGDESC: URL of a long description of the image
+LOOP = INFINITE | -1 | # of loops how many times to loop the movie
+LOWSRC: a version of the picture that isn't such a big file
+NAME
+NATURALSIZEFLAG: meaningless
+NOSAVE: meaningless
+onLoad: script to runs after the image is downloaded
+SRC: where to get the picture
+START = FILEOPEN | MOUSEOVER when to start playing the movie
+SUPPRESS = TRUE | FALSE Don't show icons of images that haven't downloaded yet
+USEMAP: name of the map definition
+VSPACE: vertical distance between the picture and the text
+WIDTH: how wide is the picture

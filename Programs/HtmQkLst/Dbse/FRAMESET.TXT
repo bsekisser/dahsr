@@ -1,0 +1,7 @@
+<FRAMESET ...>
+BORDER,Space between frames
+BORDERCOLOR,Color of frame borders
+COLS,How many cols in the frameset
+FRAMEBORDER="YES/1/NO/0",If the frames should have borders
+FRAMESPACING,Space between the frames
+ROWS,How many rows in the frameset

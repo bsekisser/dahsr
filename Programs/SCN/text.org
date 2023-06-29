@@ -1,0 +1,167 @@
+08/24/1999,1 Peter,Arnold Murray
+09/09/1999,Lamentations,Arnold Murray
+09/28/1999,Philippians,Arnold Murray
+10/05/1999,Jeremiah,Arnold Murray
+01/25/2000,1 Chronicles,Dennis Murray
+02/15/2000,Titus,Arnold Murray
+02/18/2000,Philemon,Arnold Murray
+02/29/2000,Ecclesiastes,Arnold Murray
+03/16/2000,1 Thessalonians,Arnold Murray
+03/29/2000,2 Thessalonians,Arnold Murray
+04/04/2000,Ezekiel,Arnold Murray
+06/13/2000,2 Chronicles,Dennis Murray
+10/24/2000,Romans,Arnold Murray
+11/28/2000,1 John,Arnold Murray
+12/06/2000,2 & 3 John,Arnold Murray
+12/07/2000,Psalms,Dennis Murray
+01/17/2001,1 Timothy,Arnold Murray
+02/01/2001,2 Timothy,Arnold Murray
+02/07/2001,Isaiah,Arnold Murray
+06/26/2001,Song of Solomon,Arnold Murray
+07/02/2001,John,Arnold Murray
+08/28/2001,Colossians,Arnold Murray
+02/05/2002,Acts,Arnold Murray
+04/03/2002,Daniel,Arnold Murray
+05/03/2002,Revelation,Arnold Murray
+06/28/2002,1 Samuel,Arnold Murray
+08/02/2002,2 Samuel,Arnold Murray
+09/09/2002,James,Arnold Murray
+09/13/2002,1 Kings,Dennis Murray
+10/29/2002,2 Kings,Dennis Murray
+02/25/2003,Joshua,Arnold Murray
+03/12/2003,1 Corinthians,Arnold Murray
+04/15/2003,2 Corinthians,Arnold Murray
+05/06/2003,Judges,Dennis Murray
+06/06/2003,Ephesians,Arnold Murray
+06/24/2003,Hosea,Arnold Murray
+07/01/2003,Joel,Arnold Murray
+07/14/2003,Amos,Arnold Murray
+07/29/2003,Obadiah,Arnold Murray
+07/30/2003,Jonah,Arnold Murray
+08/01/2003,Micah,Arnold Murray
+08/11/2003,Nahum,Arnold Murray
+08/18/2003,Zephaniah,Arnold Murray
+09/01/2003,Zechariah,Arnold Murray
+09/16/2003,Malachi,Arnold Murray
+09/30/2003,Philippians,Arnold Murray
+10/08/2003,Galatians,Arnold Murray
+10/15/2003,Leviticus,Dennis Murray
+12/04/2003,Mark,Arnold Murray
+01/26/2004,Genesis,Arnold Murray
+03/30/2004,1 Peter,Arnold Murray
+04/04/2004,2 Peter,Arnold Murray
+04/12/2004,Numbers,Dennis Murray
+06/10/2004,Matthew,Arnold Murray
+12/27/2004,Exodus,Arnold Murray
+02/14/2005,1 Kings,Dennis Murray
+04/04/2005,2 Kings,Dennis Murray
+05/11/2005,John,Arnold Murray
+07/05/2005,Ecclesiastes,Arnold Murray
+07/28/2005,1 Thessalonians,Arnold Murray
+08/03/2005,2 Thessalonians,Arnold Murray
+08/08/2005,Ezekiel,Arnold Murray
+10/27/2005,1 John,Arnold Murray
+11/03/2005,2 & 3 John,Arnold Murray
+11/04/2005,Judges,Dennis Murray
+12/12/2005,Hebrews,Arnold Murray
+01/12/2006,Jude,Arnold Murray
+01/23/2006,Ruth,Arnold Murray
+01/26/2006,Jeremiah,Arnold Murray
+05/04/2006,Colossians,Arnold Murray
+05/11/2006,Titus,Arnold Murray
+05/16/2006,Philemon,Arnold Murray
+05/17/2006,James,Arnold Murray
+06/02/2006,Ezra,Dennis Murray
+06/14/2006,Nehamiah,Dennis Murray
+07/05/2006,Psalms,Dennis Murray
+01/02/2007,1 Timothy,Arnold Murray
+01/10/2007,2 Timothy,Arnold Murray
+01/17/2007,Revelation,Arnold Murray
+03/07/2007,Daniel,Arnold Murray
+04/03/2007,Acts,Arnold Murray
+05/29/2007,Song of Solomon,Arnold Murray
+06/04/2007,Ephesians,Arnold Murray
+06/13/2007,Joshua,Arnold Murray
+07/08/2007,1 Samuel,Dennis Murray
+08/27/2007,2 Samuel,Dennis Murray
+10/04/2007,Luke,Arnold Murray
+12/10/2007,Isaiah,Arnold Murray
+03/10/2008,1 Corinthians,Arnold Murray
+04/08/2008,2 Corinthians,Arnold Murray
+04/28/2008,Proverbs,Arnold Murray
+06/24/2008,Galatians,Arnold Murray
+07/01/2008,1 Chronicles,Dennis Murray
+08/05/2008,2 Chronicles,Dennis Murray
+10/02/2008,Mark,Arnold Murray
+11/10/2008,Hosea,Arnold Murray
+12/01/2008,Joel,Arnold Murray
+12/05/2008,Amos,Arnold Murray
+12/15/2008,Obadiah,Arnold Murray
+12/16/2008,Jonah,Arnold Murray
+12/18/2008,Micah,Arnold Murray
+01/03/2009,Nahum,Arnold Murray
+01/06/2009,Habakkuk,Arnold Murray
+01/09/2009,Zephaniah,Arnold Murray
+01/14/2009,Haggai,Arnold Murray
+01/16/2009,Zechariah,Arnold Murray
+02/09/2009,Malachi,Arnold Murray
+02/12/2009,Matthew,Arnold Murray
+04/27/2009,Leviticus,Dennis Murray
+06/12/2009,Romans,Arnold Murray
+07/13/2009,Lamentations,Arnold Murray
+07/27/2009,1 Peter,Arnold Murray
+08/03/2009,2 Peter,Arnold Murray
+08/07/2009,Philippians,Arnold Murray
+08/24/2009,Ecclesiastes,Arnold Murray
+09/10/2009,John,Arnold Murray
+11/02/2009,Deuteronomy,Arnold Murray
+12/31/2009,1 Thessalonians,Arnold Murray
+01/06/2010,2 Thessalonians,Arnold Murray
+01/11/2010,Judges,Dennis Murray
+01/15/2010,Signs of the Solar Eclipse of 01/15/2010,Arnold Murray
+02/04/2010,2 & 3 John,Arnold Murray
+02/17/2010,1 John,Arnold Murray
+03/04/2010,Revelation,Arnold Murray
+04/13/2010,Daniel,Arnold Murray
+05/07/2010,Hebrews,Arnold Murray
+06/06/2010,Jude,Arnold Murray
+06/08/2010,Numbers,Dennis Murray
+08/09/2010,Acts,Arnold Murray
+10/04/2010,Ezekiel,Arnold Murray
+12/10/2010,Luke,Arnold Murray
+02/07/2011,Genesis,Arnold Murray
+04/11/2011,James,Arnold Murray
+04/18/2011,The Swarmers,Arnold Murray
+04/19/2011,The Deadly Wound,Arnold Murray
+04/25/2011,Colossians,Arnold Murray
+04/30/2011,1 Kings,Dennis Murray
+06/15/2011,2 Kings,Dennis Murray
+08/01/2011,Mark,Arnold Murray
+09/08/2011,Exodus,Arnold Murray
+10/28/2011,Ephesians,Arnold Murray
+11/08/2011,Ruth,Arnold Murray
+11/14/2011,1 Timothy,Arnold Murray
+11/29/2011,2 Timothy,Arnold Murray
+12/05/2011,Jeremiah,Arnold Murray
+05/01/2012,Song of Solomon,Arnold Murray
+05/07/2012,Galatians,Arnold Murray
+05/14/2012,Philippians,Arnold Murray
+05/29/2012,Ezra,Dennis Murray
+06/08/2012,Nehamiah,Dennis Murray
+06/28/2012,Matthew,Arnold Murray
+09/05/2012,Joshua,Arnold Murray
+09/29/2012,Romans,Arnold Murray
+10/31/2012,1 Samuel,Dennis Murray
+11/19/2012,Accomplished,Arnold Murray
+12/13/2012,2 Samuel,Dennis Murray
+01/30/2013,John,Arnold Murray
+03/12/2013,Ecclesiastes,Arnold Murray
+04/03/2013,1 Peter,Arnold Murray
+04/11/2013,2 Peter,Arnold Murray
+04/15/2013,Judges,Dennis Murray
+05/30/2013,Hebrews,Arnold Murray
+06/27/2013,Hosea,Arnold Murray
+06/27/2013,Jude,Arnold Murray
+07/08/2013,Psalms,Dennis Murray
+01/31/2014,Revelation,Arnold Murray
+03/13/2014,Daniel,Arnold Murray

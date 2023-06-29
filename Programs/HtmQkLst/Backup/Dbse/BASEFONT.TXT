@@ -1,0 +1,4 @@
+<BASEFONT ...>
+SIZE
+COLOR
+FACE

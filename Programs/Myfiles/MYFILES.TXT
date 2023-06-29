@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+[TITLE]
+</title>
+<link href="myfiles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="shell">
+   <div class="mhdr">
+[MHDR]
+   </div>
+   <div class="shdr">
+   Source Directory &quot;
+[SOURCE]
+   &quot;</div>
+   <div id="lpane">
+   <div class="local">Local</div>
+       <div class="text">
+       <ul>
+[POPULATE]
+       </ul>
+       </div>
+   </div>
+   <div id="rpane">
+   <div class="remote">Remote</div>
+       <div class="text">
+       <ul>
+[REMOTE]
+       </ul>
+       </div>
+   </div>
+   <div class="date">
+[DATE]
+   </div>
+</div>
+</body>
+</html>

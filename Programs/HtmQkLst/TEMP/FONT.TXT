@@ -1,0 +1,6 @@
+<FONT ...>
+COLOR: color of the text
+FACE: set the typestyle for text
+POINT-SIZE
+SIZE: size of the font
+WEIGHT

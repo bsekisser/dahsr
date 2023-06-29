@@ -1,0 +1,18 @@
+<BODY ...>
+BGCOLOR,Background color of the page
+BACKGROUND,Background picture for the page
+TEXT,Color of the text on the page
+LINK,Color of links that haven't been followed yet
+VLINK,Color of links that have been followed
+ALINK,Color of links while you are clicking on them
+BGPROPERTIES="FIXED",For no scroll
+TOPMARGIN,Size of top and bottom margins
+LEFTMARGIN,Size of left and right margins
+MARGINHEIGHT,Size of top and bottom margins
+MARGINWIDTH,Size of left and right margins
+onLoad,Script to run once the page is fully loaded
+onUnload
+onFocus
+onBlur
+STYLESRC,MS FrontPage extension
+SCROLL="YES/NO",If the document should have a scroll bar

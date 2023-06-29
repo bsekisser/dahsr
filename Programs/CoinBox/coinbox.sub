@@ -1,0 +1,459 @@
+DECLARE SUB Tdl (a$, c$, s$, t$, i$)
+DECLARE SUB Totalize ()
+DECLARE SUB Htmlize ()
+DECLARE SUB Dr (a$, c$, s$, t$, i$)
+DECLARE SUB Dollarize (i$)
+DECLARE SUB Tr (s$, a$, b$, c$, d$, e$)
+DECLARE SUB Table (a$, b$, p$, s$, w$)
+DECLARE SUB Td (a$, c$, s$, t$, i$)
+DECLARE SUB Header ()
+DECLARE SUB Footer ()
+DECLARE SUB Swipe (f%, b%)
+DECLARE SUB SayIt (i$, v%, f%, b%)
+DECLARE SUB Initialize ()
+DECLARE SUB Getkey (k$)
+DECLARE SUB Main ()
+    CONST BOOT = "coinbox.bas"
+    CONST CNT = "**.##"
+    CONST DLR = "**##.##"
+    CONST MXL = 76
+    CONST PRGM = "coinbox"
+    CONST WSZ = 17
+    COMMON SHARED Bgc%
+    COMMON SHARED Echo%
+    COMMON SHARED Family$
+    COMMON SHARED Fgc%
+    COMMON SHARED Flt%
+    COMMON SHARED q AS STRING * 1
+    COMMON SHARED Tbc AS SINGLE
+    COMMON SHARED Tbv AS DOUBLE
+    COMMON SHARED Title$
+    COMMON SHARED Today$
+    DIM SHARED Mth(12) AS STRING
+    ON ERROR GOTO Trap
+    Initialize
+    Main
+END
+Trap: Flt% = ERR: RESUME NEXT
+DATA "January","February","March","April","May","June"
+DATA "July","August","September","October","November","December"
+
+SUB Bufferize
+    DIM i$
+    CLOSE : OPEN "coinbox.dat" FOR INPUT AS #1
+    IF Flt% = 0 THEN
+        WHILE NOT EOF(1)
+        LINE INPUT #1, i$
+        WEND
+    ELSE
+        Flt% = 0
+    END IF
+    CLOSE
+END SUB
+
+SUB Cuckoo
+    SOUND 1400, 3
+    SOUND 0, 2
+    SOUND 1155, 4
+    SOUND 0, 2
+END SUB
+
+SUB Footer
+    Td "", "date", "", "<>", "Last Update: " + MID$(DATE$, 4, 2) + " " + Mth(VAL(LEFT$(DATE$, 2))) + " " + RIGHT$(DATE$, 4)
+    PRINT #2, "</table>"
+    PRINT #2, "</body>"
+    PRINT #2, "</html>"
+END SUB
+
+SUB Getkey (k$)
+    DO: k$ = INKEY$: LOOP UNTIL k$ = ""
+    DO: k$ = INKEY$: LOOP WHILE k$ = ""
+    IF ASC(k$) = 27 THEN
+        END
+    ELSEIF k$ = "*" THEN
+        RUN BOOT
+    END IF
+END SUB
+
+SUB Header
+    PRINT #2, "<!doctype html>"
+    PRINT #2, "<html lang="; q; "en"; q; ">"
+    PRINT #2, "<meta charset="; q; "utf-8"; q; ">"
+    PRINT #2, "<head>"
+    PRINT #2, "<title>The Coinbox</title>"
+    PRINT #2, "<style type="; q; "text/css"; q; ">"
+    PRINT #2, "BODY"
+    PRINT #2, "     {"
+    PRINT #2, "     font-family:"; Family$; ";"
+    PRINT #2, "     font-type:normal;"
+    PRINT #2, "     font-weight:bold;"
+    PRINT #2, "     }"
+    PRINT #2, ".mhdr {font-size:30px;}"
+    PRINT #2, ".shdr {font-size:18px;}"
+    PRINT #2, ".mtxt {color:#00f;font-size:22px;}"
+    PRINT #2, ".stxt {color:#00f;font-size:20px;}"
+    PRINT #2, ".text {color:#000;}"
+    PRINT #2, ".atxt {color:#f00;}"
+    PRINT #2, ".btxt {color:#00f;}"
+    PRINT #2, ".mhdr, .shdr {color:#fff;background:#00f;}"
+    PRINT #2, ".text, .atxt, .btxt {font-size:18px;}"
+    PRINT #2, ".date {color:#fff;background:#000;font-size:14px;}"
+    PRINT #2, "</style>"
+    PRINT #2, "</head>"
+    PRINT #2, "<body>"
+    Table "", "", "3", "", ""
+    Td "<", "shdr", "33", "<", "Total Coins: " + MID$(STR$(Tbc), 2)
+    Td "", "mhdr", "34", "", "The Coinbox"
+    Td ">", "shdr", "33", ">", "Total Value: $" + MID$(STR$(Tbv), 2)
+    PRINT #2, "</table>"
+    Table "", "1", "3", "", ""
+    Tr "Year", "M", "Denomination", "Value", "Description/Conditon", "mtxt"
+END SUB
+
+SUB Htmlize
+    DIM a$, b$, c$, d$, e$, i$, j$, k$
+    Flt% = 0
+    CLOSE : OPEN "coinbox.dat" FOR INPUT AS #1
+    IF Flt% = 0 THEN
+        OPEN "coinbox.htm" FOR OUTPUT AS #2
+        Header
+        WHILE NOT EOF(1)
+        INPUT #1, a$, c$, d$, e$
+        SELECT CASE LCASE$(RIGHT$(a$, 1))
+            CASE "a" TO "z": b$ = UCASE$(RIGHT$(a$, 1)): a$ = LEFT$(a$, LEN(a$) - 1)
+            CASE ELSE: b$ = "<br>"
+        END SELECT
+        IF c$ = "" THEN
+            c$ = "Cent"
+            d$ = ".01"
+        ELSE
+            Flt% = 0
+            CLOSE #3: OPEN "coinbox.cc" FOR INPUT AS #3
+            IF Flt% = 0 THEN
+                DO WHILE NOT EOF(3)
+                INPUT #3, i$, j$, k$
+                IF i$ = "" THEN
+                    i$ = ""
+                ELSEIF i$ = c$ THEN
+                    c$ = j$
+                    IF d$ = "" THEN
+                        IF k$ = "" THEN
+                            k$ = ""
+                        ELSE
+                            d$ = k$
+                        END IF
+                    END IF
+                    EXIT DO
+                ELSE
+                    i$ = i$ + " "
+                    IF i$ = LEFT$(c$, LEN(i$)) THEN
+                        i$ = LEFT$(i$, LEN(i$) - 1)
+                        c$ = j$ + MID$(c$, LEN(i$) + 1)
+                        IF d$ = "" THEN
+                            IF k$ = "" THEN
+                                k$ = ""
+                            ELSE
+                                d$ = k$
+                            END IF
+                        END IF
+                        EXIT DO
+                    END IF
+                END IF
+                LOOP
+            ELSE
+                Flt% = 0
+            END IF
+        END IF
+        CLOSE #3
+        IF e$ = "" THEN
+            e$ = "Circulated"
+        ELSE
+            IF e$ = "!" THEN
+                e$ = "Circulated (Watch List)!"
+                s$ = "atxt"
+            ELSEIF LEFT$(e$, 1) = "!" THEN
+                e$ = MID$(e$, 2) + " (Watch List)!"
+                s$ = "atxt"
+            ELSE
+                s$ = "text"
+            END IF
+            IF LEFT$(e$, 2) = "**" THEN
+                e$ = MID$(e$, 3) + " (Gold)"
+            ELSEIF RIGHT$(e$, 2) = "**" THEN
+                e$ = LEFT$(e$, LEN(e$) - 2) + " (Gold)"
+            ELSEIF LEFT$(e$, 1) = "*" THEN
+                e$ = MID$(e$, 2) + " (Silver)"
+            ELSEIF RIGHT$(e$, 1) = "*" THEN
+                e$ = LEFT$(e$, LEN(e$) - 1) + " (Silver)"
+            END IF
+            Flt% = 0
+            CLOSE #3: OPEN "coinbox.ee" FOR INPUT AS #3
+            IF Flt% = 0 THEN
+                DO WHILE NOT EOF(3)
+                INPUT #3, i$, j$
+                IF i$ = "" THEN
+                    i$ = ""
+                ELSEIF i$ = e$ THEN
+                    e$ = j$
+                    EXIT DO
+                ELSE
+                    i$ = i$ + " "
+                    IF i$ = LEFT$(e$, LEN(i$)) THEN
+                        i$ = LEFT$(i$, LEN(i$) - 1)
+                        e$ = j$ + MID$(e$, LEN(i$) + 1)
+                        EXIT DO
+                    END IF
+                END IF
+                LOOP
+            ELSE
+                Flt% = 0
+            END IF
+            CLOSE #3
+        END IF
+        Tr a$, b$, c$, d$, e$, s$
+        WEND
+        Footer
+    ELSE
+        Flt% = 0
+    END IF
+    CLOSE
+END SUB
+
+SUB Initialize
+    DIM i$, x%
+    FOR x% = 1 TO 12: READ Mth(x%): NEXT
+    Bgc% = 1
+    Echo% = 2
+    Family$ = "georgia," + CHR$(34) + "times new roman" + CHR$(34) + ",trebuchet,serif"
+    Fgc% = 15
+    Flt% = 0
+    q = CHR$(34)
+    Title$ = "The Coinbox"
+    Today$ = MID$(DATE$, 4, 2) + " " + Mth(VAL(LEFT$(DATE$, 2))) + " " + RIGHT$(DATE$, 4)
+    CLOSE : OPEN PRGM + ".ini" FOR INPUT AS #1
+    IF Flt% = 0 THEN
+        WHILE NOT EOF(1)
+        LINE INPUT #1, i$
+        FOR x% = 1 TO LEN(i$)
+        IF x% < LEN(i$) THEN
+            SELECT CASE UCASE$(LEFT$(i$, x%))
+                CASE "FAMILY=": Family$ = MID$(i$, x% + 1): EXIT FOR
+            END SELECT
+        END IF
+        NEXT
+        WEND
+    END IF
+    CLOSE : OPEN "echo.dat" FOR INPUT AS #1
+    INPUT #1, Echo%
+    CLOSE
+    SHELL "dir > dir.shl"
+    OPEN "dir.shl" FOR INPUT AS #1
+    FOR x% = 1 TO 4: LINE INPUT #1, i$: NEXT
+    CLOSE : KILL "dir.shl"
+    FOR x% = 1 TO LEN(i$)
+    SELECT CASE LCASE$(MID$(i$, x%, 4))
+        CASE "/fix", "fix/", "\fix", "fix\": Bgc% = 0: EXIT FOR
+    END SELECT
+    NEXT
+    DO
+    IF RIGHT$(Family$, 1) = ";" THEN
+        Family$ = LEFT$(Family$, LEN(Family$) - 1)
+    ELSE
+        EXIT DO
+    END IF
+    LOOP
+END SUB
+
+SUB Main
+    Swipe 14, Bgc%
+    SayIt "Creating " + q + LCASE$(PRGM) + ".html" + q + " Page", Echo%, 10, Bgc%
+    SayIt q + LCASE$(PRGM) + ".html" + q + " Page Finished", Echo% + 1, 2, Bgc%
+    SayIt "Press ENTER to Exit", Echo% + 2, 7, Bgc%
+    SayIt "Press ESC to End", Echo% + 3, 7, Bgc%
+    Totalize
+    Htmlize
+    SayIt "Creating " + q + LCASE$(PRGM) + ".html" + q + " Page", Echo%, 2, Bgc%
+    SayIt q + LCASE$(PRGM) + ".html" + q + " Page Finished", Echo% + 1, 10, Bgc%
+    SayIt "Press ENTER to Exit", Echo% + 2, Fgc%, Bgc%
+    SayIt "Press ESC to End", Echo% + 3, Fgc%, Bgc%
+    DO
+    Getkey k$
+    LOOP UNTIL k$ = CHR$(13)
+    RUN BOOT
+END SUB
+
+SUB SayIt (i$, v%, f%, b%)
+    DIM e$, l$, r$, w%
+    IF i$ = "" THEN e$ = "" ELSE e$ = " ù "
+    l$ = LEFT$(i$, LEN(i$) / 2)
+    r$ = MID$(i$, LEN(l$) + 1)
+    w% = 38
+    l$ = RIGHT$(STRING$(w%, 32) + RIGHT$(e$, 2) + l$, w%)
+    r$ = LEFT$(r$ + LEFT$(e$, 2) + STRING$(w%, 32), w%)
+    IF v% < 2 THEN v% = 2
+    IF v% > 22 THEN v% = 22
+    COLOR f%, b%
+    LOCATE v%, 3
+    PRINT l$; r$
+    COLOR Fgc%, Bgc%
+END SUB
+
+SUB Swipe (f%, b%)
+    DIM x%
+    FOR x% = Echo% TO 22
+    SayIt "", x%, f%, b%
+    NEXT
+END SUB
+
+SUB Table (a$, b$, p$, s$, w$)
+    IF a$ = "<" THEN
+        a$ = "left"
+    ELSEIF a$ = ">" THEN
+        a$ = "right"
+    ELSE
+        a$ = "center"
+    END IF
+    IF b$ = "" THEN b$ = "0"
+    IF p$ = "" THEN p$ = "0"
+    IF s$ = "" THEN s$ = "0"
+    IF w$ = "" THEN w$ = "100"
+    PRINT #2, "<table";
+    PRINT #2, " align="; q; a$; q;
+    PRINT #2, " border="; q; b$; q;
+    PRINT #2, " cellpadding="; q; p$; q;
+    PRINT #2, " cellspacing="; q; s$; q;
+    PRINT #2, " width="; q; w$; "%"; q; ">"
+END SUB
+
+SUB Td (a$, c$, s$, t$, i$)
+    IF a$ = "<" THEN
+        a$ = "left"
+    ELSEIF a$ = ">" THEN
+        a$ = "right"
+    ELSE
+        a$ = "center"
+    END IF
+    IF c$ = "" THEN c$ = "text"
+    IF s$ = "" THEN s$ = "100"
+    IF LEFT$(t$, 1) = "<" THEN PRINT #2, "<tr>";
+    PRINT #2, "<td";
+    PRINT #2, " align="; q; a$; q;
+    PRINT #2, " class="; q; c$; q;
+    PRINT #2, " colspan="; q; s$; q;
+    PRINT #2, " width="; q; s$; "%"; q; ">";
+    IF i$ = "" THEN
+        PRINT #2, ""
+    ELSE
+        DO
+        FOR x% = 1 TO LEN(i$)
+        IF MID$(i$, x%, 1) = "#" THEN
+            PRINT #2, LEFT$(i$, x% - 1); "$";
+            PRINT #2, USING (CNT); VAL(MID$(i$, x% + 1));
+            EXIT DO
+        ELSEIF MID$(i$, x%, 1) = "$" THEN
+            PRINT #2, LEFT$(i$, x%);
+            PRINT #2, USING (DLR); VAL(MID$(i$, x% + 1));
+            EXIT DO
+        END IF
+        NEXT
+        PRINT #2, i$;
+        EXIT DO
+        LOOP
+        PRINT #2, "</td>";
+        IF RIGHT$(t$, 1) = ">" THEN
+            PRINT #2, "</tr>"
+        ELSE
+            PRINT #2, ""
+        END IF
+    END IF
+END SUB
+
+SUB Tdl (a$, c$, s$, t$, i$)
+    IF a$ = "<" THEN
+        a$ = "left"
+    ELSEIF a$ = ">" THEN
+        a$ = "right"
+    ELSE
+        a$ = "center"
+    END IF
+    IF c$ = "" THEN c$ = "text"
+    IF s$ = "" THEN s$ = "100"
+    IF LEFT$(t$, 1) = "<" THEN PRINT #2, "<tr>";
+    PRINT #2, "<td";
+    PRINT #2, " align="; q; a$; q;
+    PRINT #2, " class="; q; c$; q;
+    PRINT #2, " colspan="; q; s$; q;
+    PRINT #2, " width="; q; s$; "%"; q; ">";
+    IF i$ = "" THEN
+        PRINT #2, ""
+    ELSE
+        DO
+        FOR x% = 1 TO LEN(i$)
+        IF MID$(i$, x%, 1) = "$" THEN
+            PRINT #2, LEFT$(i$, x%);
+            PRINT #2, USING (DLR); VAL(MID$(i$, x% + 1));
+            EXIT DO
+        END IF
+        NEXT
+        PRINT #2, i$;
+        EXIT DO
+        LOOP
+        PRINT #2, "</td>";
+        IF RIGHT$(t$, 1) = ">" THEN
+            PRINT #2, "</tr>"
+        ELSE
+            PRINT #2, ""
+        END IF
+    END IF
+END SUB
+
+SUB Totalize
+    DIM c$, d$, i$, j$, k$, v$, y$
+    Flt% = 0
+    DO
+    CLOSE : OPEN "coinbox.dat" FOR INPUT AS #1
+    IF Flt% = 0 THEN
+        WHILE NOT EOF(1)
+        INPUT #1, y$, d$, v$, c$
+        IF LEFT$(c$, 1) = "!" THEN
+            c$ = c$
+        ELSE
+            Tbc = Tbc + 1
+            IF d$ = "" THEN
+                Tbv = Tbv + .01
+            ELSE
+                CLOSE #3: OPEN "coinbox.cc" FOR INPUT AS #3
+                IF Flt% = 0 THEN
+                    DO WHILE NOT EOF(3)
+                    INPUT #3, i$, j$, k$
+                    IF i$ = d$ THEN
+                        Tbv = Tbv + VAL(k$)
+                        EXIT DO
+                    END IF
+                    LOOP
+                ELSE
+                    Flt% = 0
+                    EXIT DO
+                END IF
+            END IF
+        END IF
+        WEND
+    ELSE
+        Flt% = 0
+    END IF
+    EXIT DO
+    LOOP
+    CLOSE
+END SUB
+
+SUB Tr (a$, b$, c$, d$, e$, s$)
+    Td "", s$, "5", "<", a$
+    Td "", s$, "2", "", b$
+    Td "<", s$, "15", "", c$
+    SELECT CASE LEFT$(d$, 1)
+        CASE ".", "0" TO "9": Td ">", s$, "5", "", "#" + d$
+        CASE ELSE: Td "<", s$, "5", "", d$
+    END SELECT
+    Td "<", s$, "73", ">", e$
+END SUB
+

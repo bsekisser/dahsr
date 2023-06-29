@@ -1,0 +1,222 @@
+A
+    {
+    color:#00f;
+    text-decoration:none;
+    }
+
+A:hover
+    {
+    color:#fff;
+    background:#00f;
+    }
+
+BODY
+    {
+    background:#ddf;
+    font-family:georgia,"times new roman",serif;
+    font-style:normal;
+    }
+
+#body, #menu, #register, #record, #document
+    {
+    background:#fff;
+    border:1px solid #000;
+    margin-left:auto;
+    margin-right:auto;
+    width:900px;
+    }
+.body, .menu, .register, .record, .document, .term
+    {
+    background:#fff;
+    color:#000;
+    font-size:16px;
+    font-weight:bold;
+    padding:6px;
+    text-align:left;
+    }
+#path
+    {
+    background:#fff;
+    color:#00f;
+    font-weight:bold;
+    font-size:24px;
+    padding:6px;
+    text-align:center;
+    width:900px;
+    }
+#shdr
+    {
+    color:#00f;
+    font-weight:bold;
+    font-size:14px;
+    padding:6px;
+    text-align:center;
+    width:900px;
+    }
+#mhdr
+    {
+    background:#00f;
+    color:#fff;
+    font-weight:bold;
+    font-size:26px;
+    padding:6px;
+    text-align:center;
+    width:900px;
+    }
+#parents
+    {
+    padding:6px;
+    width:900px;
+    }
+#descendant
+    {
+    color:#000;
+    float:left;
+    font-size:22px;
+    font-weight:bold;
+    text-align:center;
+    width:450px;
+    }
+#spouse
+    {
+    color:#000;
+    float:right;
+    font-size:22px;
+    font-weight:bold;
+    text-align:center;
+    width:450px;
+    }
+#children
+    {
+    color:#000;
+    clear both;
+    font-size:18px;
+    font-weight:bold;
+    padding:6px;
+    text-align:center;
+    width:900px;
+    }
+#notes
+    {
+    color:#000;
+    font-size:18px;
+    font-weight:bold;
+    padding:6px;
+    text-align:center;
+    width:900px;
+    }
+#generation
+    {
+    background:#383;
+    color:#ff0;
+    font-size:14px;
+    font-weight:normal;
+    padding:6px;
+    text-align:center;
+    width:900px;
+    }
+#date
+    {
+    background:#000;
+    color:#fff;
+    font-size:10px;
+    font-weight:normal;
+    padding:6px;
+    text-align:center;
+    width:900px;
+    }
+.descendant
+    {
+    color:#000;
+    font-size:18px;
+    font-weight:normal;
+    text-align:left;
+    }
+.spouse
+    {
+    color:#000;
+    font-size:18px;
+    font-weight:normal;
+    text-align:left;
+    }
+.children
+    {
+    color:#000;
+    font-size:16px;
+    font-weight:normal;
+    text-align:left;
+    }
+.notes
+    {
+    color:#000;
+    font-size:16px;
+    font-weight:normal;
+    text-align:left;
+    }
+.mhdr
+    {
+    color:#00f;
+    font-weight:bold;
+    font-size:24px;
+    text-align:center;
+    }
+.mtxt
+    {
+    color:#00f;
+    font-weight:bold;
+    font-size:20px;
+    text-align:center;
+    }
+.stxt
+    {
+    color:#00f;
+    font-weight:bold;
+    font-size:18px;
+    text-align:center;
+    }
+.text
+    {
+    color:#000;
+    font-weight:normal;
+    font-size:16px;
+    }
+.rtxt
+    {
+    color:#f00;
+    font-weight:normal;
+    font-size:16px;
+    }
+.gtxt
+    {
+    color:#0f0;
+    font-weight:normal;
+    font-size:16px;
+    }
+.btxt
+    {
+    color:#00f;
+    font-weight:normal;
+    font-size:16px;
+    }
+.generation
+    {
+    color:#000;
+    font-size:12px;
+    font-weight:normal;
+    padding:6px;
+    text-align:center;
+    }
+.terminal
+    {
+    background:#fff;
+    color:#000;
+    font-family:terminal;
+    font-size:16px;
+    font-weight:normal;
+    padding:6px;
+    }
+p
+    {
+    text-align:left;
+    text-indent:20px;
+    }

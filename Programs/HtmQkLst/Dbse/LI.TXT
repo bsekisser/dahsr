@@ -1,0 +1,3 @@
+<LI ...> "List Item"
+TYPE = DISC | CIRCLE | SQUARE | 1 | A | a | I | i /type of bullet or numeral
+VALUE: where to continue counting

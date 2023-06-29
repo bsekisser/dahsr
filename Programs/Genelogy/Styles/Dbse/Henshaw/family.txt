@@ -1,0 +1,37 @@
+[F],Henshaw
+[G]
+[D],Progenitor,Charles J. Henshaw,b-1888-89?,d-19 May 1964 (75yrs),m-
+[S],Ethel Catherine Dicks*,b-1896,d-27 Sep 1982,p-
+[C],01,Anne (Anna) May,b-31 Jan 1915,d-10 Mar 1998
+[C],02,Chrismon,b-,d-25 Mar 1991
+[C],03,Emily,b-16 Nov 1931,d-18 Jul 2004
+[C],04,James K.,b-,d-8 Feb 2002
+[N],*Dicks was her name by adoption. She didn't know her real surname or birthplace.
+[N],Her earliest memories were when she was about 6 years of age, but not sure if it was Yorklyn or Hockesson Del.
+[E]
+[G]
+[D],01,Anne* May Henshaw,b-31 Jan 1915,d-10 Mar 1998,m-5 Jun 1937
+[S],<a href="..\hughes\r377.htm">William Zimmer Hughes</a>,b-8 Jun 1909,d-29 Mar 1981,p-George Parker Sr. & Mary Hester Zimmer
+[C],011,William Zimmer Jr.,b-15 Feb 1938,d-
+[C],012,Charles Burrer,b-13 Feb 1939,d-29 Mar 2000
+[C],013,Douglas Arthur,b-15 May 1944,d-
+[C],014,George Parker III,b-21 Nov 1948,d-2 Dec 2009
+[C],015,infant &quot;Baby&quot; Hughes,b-18 Oct 1956,d-18 Oct 1956
+[N],*She was named <b>Anna</b> at birth.
+[E]
+[D],02,Chrismon Henshaw,b-,d-25 Mar 1991,m-
+[S],Leila (Lee) Willis*,b-,d-5 Sep 1995,p-
+[X]
+[N],*James L. Willis - Son from prior marriage, deceased.
+[E]
+[D],03,Emily Henshaw,b-16 Nov 1931,d-18 Jul 2004,m-
+[S],Edward Galvin,b-1927,d-1982,p-
+[C],031,Catherine,b-,d-
+[C],032,Ellen,b-,d-
+[E]
+[D],04,James K. Henshaw*,b-,d-8 Feb 2002,m-1975?
+[S],Jane M. Swanson** (Second Wife?),b-,d-,p-
+[C],041,James K. Jr.,b-,d-
+[N],*Children of first marriage not known.
+[N],**Children of previous marriage; Raymond R. Millard Sr. & Harry C. Millard.
+[E]

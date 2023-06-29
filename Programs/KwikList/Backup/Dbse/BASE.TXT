@@ -1,0 +1,3 @@
+<BASE ...> "Base Address"
+HREF,Default address for hypertext links
+TARGET="_blank/_parent/_self/_top|frame name",Default window for linked documents

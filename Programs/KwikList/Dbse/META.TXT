@@ -1,0 +1,4 @@
+<META ...>
+CONTENT: Metainformation content
+HTTP-EQUIV: Name of the pretend HTTP header
+NAME = KEYWORDS | DESCRIPTION | REFRESH | ...many others /The pupose of this META tag

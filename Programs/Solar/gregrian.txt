@@ -1,0 +1,18 @@
+1,1,Happy New Year!
+1,22,Doug Jr, b-1971
+2,10,Kay, b-1945
+2,21,Mike, b-1977
+3,10,Anne Hughes, d-1998
+3,19,Spring Begins
+3,29,William Z. Hughes Sr., d-1981: Charles, d-2000.
+5,15,Doug Sr, b-1944
+5,31,Traditional Memorial Day
+6,9,Rick, d-2009
+6,14,Flag Day: Rick, b-1950
+7,4,Independence Day, 1776
+8,13,Tom Engelhardt, b-1943
+8,15,Helen, b-1946
+8,16,Tom &amp; Helen, Married 2008
+10,31,Holloween
+12,2,George, d-2009
+12,25,Christmas

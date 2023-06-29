@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calendar Index</title>
+<style type="text/css">
+A	{color:#00f;text-decoration:none;}
+A.hover	{color:#fff;background;#00f;}
+BODY
+	{
+	border:1px solid #00f;
+	font-family:georgia,"times new roman",trebuchet,serif;
+	font-stlpe:normal;
+	font-type:normal;
+	font-weight:bold;
+	font-size:26px;
+	padding:3px;
+	text-align:center;
+	}
+.mhdr	{
+	color:#fff;
+	background:#00f;
+	font-size:36px;
+	}
+</style>
+</head>
+<body>
+	<div class="mhdr">Calendar Index</div>
+	<div align="center" class="text">
+	<a href="file:\\c:\dahsr\qbasic\programs\nativity\nativity.htm">Nativity</a>
+	- <a href="file:\\c:\dahsr\qbasic\programs\solar\solar.htm">Solar</a>
+	</div>
+<hr>
+	<div class="text">
+	<a href="2012\calendar.htm">2012</a>
+	- <a href="2013\calendar.htm">2013</a>
+	- <a href="2014\calendar.htm">2014</a>
+	- <a href="2015\calendar.htm">2015</a>
+	- <a href="2016\calendar.htm">2016</a>
+	- <a href="2017\calendar.htm">2017</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+*Cols A,Cols C
+IMIP,-420,-2100
+Orgination Fee,-1000,-1000
+Cash Request,3315.45,4964.40
+Line Of Credit,19857.60,16528.65
+=
+*Cols B,Cols C
+IMIP,-2100,-420
+Orgination Fee,-1000,-2500
+Cash Request,4964.40,1815.45
+Line Of Credit,16528.65,19857.60
+=
+*Cols A,Cols C
+IMIP,-420,-420
+Orgination Fee,-1000,-2500
+Cash Request,3315.45,1815.45
+Line Of Credit,19857.60,19857.60
+=

@@ -1,0 +1,11 @@
+<MARQUEE ...>
+WIDTH: how wide the marquee is
+HEIGHT: how tall the marquee is
+DIRECTION = LEFT | RIGHT which direction the marquee should scroll
+BEHAVIOR = SCROLL | SLIDE | ALTERNATE what type of scrolling
+SCROLLDELAY: how long to delay between each jump
+SCROLLAMOUNT: how far to jump
+LOOP = INFINITE | number of loops how many times to loop
+BGCOLOR: background color
+HSPACE: horizontal space around the marquee
+VSPACE: vertical space around the marquee

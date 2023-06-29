@@ -1,0 +1,4 @@
+<MULTICOL ...>
+COLS: how many columns
+GUTTER: space between columns
+WIDTH: width of a single column

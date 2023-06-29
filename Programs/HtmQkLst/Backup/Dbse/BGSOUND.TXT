@@ -1,0 +1,3 @@
+<BGSOUND ...> "Background Sound"
+SRC,URL of the sound
+LOOP="INFINITE/Number of loops",How many times to play the sound

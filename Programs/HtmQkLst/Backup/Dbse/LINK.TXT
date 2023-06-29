@@ -1,0 +1,7 @@
+<LINK ...>
+REL: relationship to this page
+REV: reverse relationship to this page
+HREF: URL of related document
+TITLE: suggested title
+MEDIA = SCREEN | PRINT | PROJECTION | AURAL | BRAILLE | ALL | other media What media type the link applies to
+TYPE: MIME type of linked resource

@@ -1,0 +1,17 @@
+<smil>
+<head><title>Media Box</title></head>
+<body>
+<seq>
+<media src="c:\media\audios\Gospel,An Evening Prayer,Kate Smith.mp3"/>
+<media src="c:\media\audios\Gospel,Bless This House,Kate Smith.mp3"/>
+<media src="c:\media\audios\Gospel,He Touched Me,Kate Smith.mp3"/>
+<media src="c:\media\audios\Gospel,I Believe in Miracles,Kate Smith.mp3"/>
+<media src="c:\media\audios\Gospel,I Love to Tell the Story,Kate Smith.mp3"/>
+<media src="c:\media\audios\Gospel,I May Never Pass This Way Again,Kate Smith.mp3"/>
+<media src="c:\media\audios\Gospel,May God Be With You,Kate Smith.mp3"/>
+<media src="c:\media\audios\Gospel,Touch of His Hand On Mine,Kate Smith.mp3"/>
+<media src="c:\media\audios\Gospel,Were You There,Kate Smith.mp3"/>
+<media src="c:\media\audios\Gospel,You&apos;ll Never Walk Alone,Kate Smith.mp3"/>
+</seq>
+</body>
+</smil>

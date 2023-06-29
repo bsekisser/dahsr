@@ -1,0 +1,58 @@
+DAHSR's Coin Box(10)
+1915,f,,?
+1919,c,,c
+1941,c,,c
+1941,c,,c
+1941,c,,c
+1944,c,,c
+1944d,c,,c
+1945,c,,c
+1945,c,,c
+1945,c,,c
+1945,c,,c
+1946,c,,c
+1946,c,,c
+1946,c,,c
+1947,f,,?
+1949,c,,c
+1949,n,,c Canadian*
+1950,c,,c
+1950,c,,c
+1950d,c,,c
+1951,c,,c
+1951,c,,c
+1951d,c,,c
+1952,c,,c
+1952d,c,,c
+1953d,c,,c
+1953d,c,,c
+1953d,c,,c
+1953s,c,,c
+1953s,c,,c
+1954,n,,c
+1954s,c,,c
+1955d,c,,c
+1955d,c,,c
+1956,c,,c
+1956,c,,c
+1956,c,,c
+1956,c,,Needs Cleaning
+1956d,c,,c
+1956d,c,,c
+1957,c,,c
+1957,c,,c
+1957d,c,,c
+1958d,c,,c
+1958d,c,,c
+1958d,c,,c
+1959d,c,,c
+1964,d,,Neutron Irradiated
+1964d,n,,c
+1967,p,,?
+1968,p,,Ireland
+1968s,c,,c
+1974s,c,,c
+1976,h,,Kennedy 1776-1976 Bicentennial
+1985p,d,,Die Break (Edge Cud Upper Right @1330)
+1998,q,,Obverse-A line or mark at "8": Reverse-Minor mark between wing top and head.
+2005p,d,,c

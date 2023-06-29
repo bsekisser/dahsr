@@ -1,0 +1,14 @@
+<smil>
+<head><title>Media Box</title></head>
+<body>
+<seq>
+<media src="c:\media\audios\Ragtime Piano,12th Street Rag,Alan Dale.mp3"/>
+<media src="c:\media\audios\Ragtime Piano,Are You from Dixie,Alan Dale.mp3"/>
+<media src="c:\media\audios\Ragtime Piano,Down Yonder,Alan Dale.mp3"/>
+<media src="c:\media\audios\Ragtime Piano,Love Letters in the Sand,Alen Dale.mp3"/>
+<media src="c:\media\audios\Ragtime Piano,Peg o&apos; My Heart,Alan Dale.mp3"/>
+<media src="c:\media\audios\Ragtime Piano,Tennessee Waltz,Alan Dale.mp3"/>
+<media src="c:\media\audios\Ragtime Piano,Waitin for the Rbt E Lee,Alan Dale.mp3"/>
+</seq>
+</body>
+</smil>

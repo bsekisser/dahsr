@@ -1,0 +1,4 @@
+MAIN=c:\dahsr\media\audio.lib
+BACKUP=e:\dahsr\media\audio.lib
+MAIN=c:\dahsr\media\video.lib
+BACKUP=e:\dahsr\media\video.lib

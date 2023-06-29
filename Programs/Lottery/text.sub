@@ -1,0 +1,606 @@
+DECLARE SUB SayIt (i$, v%, f%, B%)
+DECLARE SUB MsgBox (i$)
+DECLARE SUB Main ()
+DECLARE SUB Filter (d$)
+DECLARE SUB SkipIt ()
+DECLARE SUB Sequent (s$)
+DECLARE SUB ReDate (i$)
+DECLARE SUB Rstv (i$)
+DECLARE SUB Start ()
+DECLARE SUB AddLine (c$, i$, j$)
+DECLARE SUB Purge ()
+DECLARE SUB Generate ()
+DECLARE SUB Initialize ()
+DECLARE SUB Part2 ()
+DECLARE SUB Part1 ()
+    CONST BOOT = "lottery.bas"
+    CONST MXL = 80, WSZ = 20
+    COMMON SHARED Hd$, Ln$, Ty$, Px$, Lo$, Hi$, Xp$, Xl$, Xh$
+    COMMON SHARED Bgc%
+    COMMON SHARED DateCode$
+    COMMON SHARED Fgc%
+    COMMON SHARED Flt%
+    COMMON SHARED Fwd$
+    COMMON SHARED Logo$
+    COMMON SHARED Filename$
+    COMMON SHARED Mxg$
+    COMMON SHARED Title$
+    COMMON SHARED Today$
+    COMMON SHARED Url$
+    COMMON SHARED Void$
+    DIM SHARED Mth(12) AS STRING * 3, Number(9) AS STRING
+    DIM SHARED Ar(1, 10), T1(1, 9, 9), T2(1, 99), T3(1, 99)
+    ON ERROR GOTO Trap
+    Initialize
+    Main
+    RUN "html" + Fwd$
+    RUN BOOT
+END
+Trap: Flt% = ERR: RESUME NEXT
+DATA "January","February","March","April","May","June"
+DATA "July","August","September","October","November","December"
+DATA "Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"
+
+SUB AddLine (c$, i$, j$)
+    DIM l$, n%, x%
+    IF i$ = "*" AND LEN(j$) > 0 THEN
+        l$ = LEFT$(STRING$(MXL / 2 - (LEN(j$) / 2), 32) + j$ + STRING$(MXL, 32), MXL)
+    ELSEIF i$ = "É»" AND j$ = "" THEN
+        l$ = LEFT$(LEFT$(i$, 1) + STRING$(MXL, 205), MXL - 1) + RIGHT$(i$, 1)
+    ELSEIF i$ = "É»" AND LEN(j$) > 0 THEN
+        l$ = LEFT$(LEFT$(i$, 1) + STRING$(MXL / 2 - (LEN(j$) / 2) - 2, 205) + "[ " + j$ + " ]" + STRING$(MXL / 2, 205), MXL - 1) + RIGHT$(i$, 1)
+    ELSEIF i$ = "È¼" THEN
+        IF j$ = "" THEN j$ = Logo$
+        l$ = LEFT$(LEFT$(i$, 1) + STRING$(MXL / 2 - (LEN(j$) / 2) - 2, 205) + "[ " + j$ + " ]" + STRING$(MXL / 2, 205), MXL - 1) + RIGHT$(i$, 1)
+    ELSEIF i$ = "É" AND j$ = "»" OR i$ = "È" AND j$ = "¼" THEN
+        l$ = i$ + STRING$(MXL - 2, 205) + j$
+    ELSEIF i$ = "=" AND j$ = "=" THEN
+        l$ = "Ì" + STRING$(MXL - 2, 205) + "¹"
+    ELSEIF i$ = "-" AND j$ = "-" THEN
+        l$ = "Ç" + STRING$(MXL - 2, 196) + "¶"
+    ELSEIF i$ = "- " AND j$ = " -" THEN
+        l$ = "º " + STRING$(MXL - 4, 45) + " º"
+    ELSEIF LEN(i$) > 0 AND j$ = "" THEN
+        l$ = LEFT$("º" + STRING$(MXL / 2 - (LEN(i$) / 2), 32) + i$ + STRING$(MXL, 32), MXL - 1) + "º"
+    ELSEIF LEN(j$) > 0 AND i$ = "" THEN
+        l$ = LEFT$("º" + STRING$(MXL / 2 - (LEN(j$) / 2), 32) + j$ + STRING$(MXL, 32), MXL - 1) + "º"
+    ELSEIF LEN(i$) > 0 AND j$ = "*" THEN
+        l$ = LEFT$(STRING$(MXL / 2 - (LEN(i$) / 2), 32) + i$ + STRING$(MXL, 32), MXL)
+    ELSEIF LEN(i$) > 0 AND LEN(j$) > 0 THEN
+        l$ = LEFT$("º " + i$ + STRING$(MXL, 46), MXL - LEN(j$) - 2) + j$ + " º"
+    ELSE
+        l$ = ""
+    END IF
+    IF LEN(l$) > 0 THEN
+        FOR x% = 1 TO LEN(c$)
+        n% = VAL(MID$(c$, x%, 1))
+        PRINT #n%, l$
+        NEXT
+    END IF
+END SUB
+
+SUB Cuckoo
+    SOUND 1400, 3
+    SOUND 0, 2
+    SOUND 1155, 4
+    SOUND 0, 2
+END SUB
+
+SUB Filter (d$)
+    DIM i$, x%
+    FOR x% = 1 TO LEN(d$)
+    SELECT CASE UCASE$(MID$(d$, x%, 1))
+        CASE "0" TO "9": i$ = i$ + MID$(d$, x%, 1)
+        CASE ELSE: i$ = i$ + "/"
+    END SELECT
+    NEXT
+    d$ = i$
+END SUB
+
+SUB Generate
+    DIM g$
+    g$ = "0"
+    CLOSE
+    OPEN "games.txt" FOR INPUT AS #1
+    OPEN "text\s0.txt" FOR OUTPUT AS #2
+    OPEN "text\h0.txt" FOR OUTPUT AS #8
+    AddLine "2", "É»", "Lottery Game Summary Displays"
+    AddLine "8", "É»", "Lottery Game History Displays"
+    AddLine "28", "Lottery Name", "Filename"
+    AddLine "28", "- ", " -"
+    WHILE NOT EOF(1)
+    Rstv ""
+    LINE INPUT #1, Filename$
+    Start
+    IF Flt% = 0 THEN
+        g$ = MID$(STR$(VAL(g$) + 1), 2)
+        AddLine "28", RIGHT$(STRING$(LEN(Mxg$), "0") + g$, LEN(Mxg$)) + ":" + Ln$, CHR$(34) + Filename$ + CHR$(34)
+        CLOSE #4: OPEN "text\s" + g$ + ".txt" FOR OUTPUT AS #4
+        CLOSE #6: OPEN "text\h" + g$ + ".txt" FOR OUTPUT AS #6
+        AddLine "4", "É»", "Game #" + RIGHT$(STRING$(LEN(Mxg$), "0") + g$, LEN(Mxg$)) + " Summary Display: " + Today$
+        AddLine "6", "É»", "Game #" + RIGHT$(STRING$(LEN(Mxg$), "0") + g$, LEN(Mxg$)) + " History Display: " + Today$
+        AddLine "46", "Lottery Name", Ln$
+        AddLine "6", "-", "-"
+        IF Ln$ = "" OR Ln$ = Void$ THEN
+            SkipIt
+        ELSE
+            Part1
+            Part2
+        END IF
+        IF LEN(Url$) > 0 THEN
+            AddLine "46", "-", "-"
+            AddLine "46", Url$, ""
+        END IF
+        AddLine "46", "È¼", ""
+    ELSE
+        Flt% = 0
+    END IF
+    WEND
+    AddLine "28", "È¼", ""
+    CLOSE
+END SUB
+
+SUB Getkey (k$)
+    DO: LOOP UNTIL INKEY$ = ""
+    DO
+    k$ = INKEY$
+    LOOP WHILE k$ = ""
+    a% = ASC(k$)
+    IF a% = 27 THEN END
+END SUB
+
+SUB Initialize
+    DIM i$, x%
+    SELECT CASE UCASE$(RIGHT$(BOOT, 4))
+        CASE ".EXE": Fwd$ = ".mod"
+        CASE ELSE: Fwd$ = ".sub"
+    END SELECT
+    Bgc% = 1
+    DateCode$ = "DD MM YYYY"
+    Fgc% = 15
+    Logo$ = "Don't Bet The House!"
+    Title$ = "Lottery Game Statistics"
+    Today$ = LEFT$(DATE$, 2) + "/" + MID$(DATE$, 4, 2) + "/" + RIGHT$(DATE$, 2)
+    Void$ = "No Data to Process"
+    Url$ = "dahsr@yahoo.com"
+    Flt% = 0
+    CLOSE : OPEN "lottery.ini" FOR INPUT AS #1
+    IF Flt% = 0 THEN
+        WHILE NOT EOF(1)
+        LINE INPUT #1, i$
+        FOR x% = 1 TO LEN(i$)
+        IF x% < LEN(i$) THEN
+            SELECT CASE UCASE$(LEFT$(i$, x%))
+                CASE "DATECODE=": DateCode$ = MID$(i$, x% + 1): EXIT FOR
+                CASE "LOGO=": Logo$ = MID$(i$, x% + 1): EXIT FOR
+                CASE "URL=": Url$ = MID$(i$, x% + 1): EXIT FOR
+                CASE "VOID=": Void$ = MID$(i$, x% + 1): EXIT FOR
+            END SELECT
+        END IF
+        NEXT
+        WEND
+    ELSE
+        Flt% = 0
+    END IF
+    CLOSE
+    FOR x% = 1 TO 12: READ Mth(x%): NEXT
+    FOR x% = 0 TO 9: READ Number(x%): NEXT
+    ReDate Today$
+END SUB
+
+SUB Main
+    CLOSE : OPEN "games.txt" FOR INPUT AS #1
+    WHILE NOT EOF(1)
+    LINE INPUT #1, Ln$
+    Mxg$ = MID$(STR$(VAL(Mxg$) + 1), 2)
+    WEND
+    CLOSE
+    IF Mxg$ = "" THEN Mxg$ = "0"
+    IF LEN(Mxg$) = 1 THEN Mxg$ = "0" + Mxg$
+    MsgBox "Updating Text Displays!"
+    Purge
+    Generate
+END SUB
+
+SUB MsgBox (i$)
+    SayIt "É" + STRING$(MXL - 2, 205) + "»", WSZ + 1, 15, 4
+    SayIt LEFT$("º " + STRING$(MXL / 2 - (LEN(i$) / 2), 32) + i$ + STRING$(MXL / 2, 32), MXL - 2) + " º", WSZ + 2, 15, 4
+    SayIt "È" + STRING$(MXL - 2, 205) + "¼", WSZ + 3, 15, 4
+END SUB
+
+SUB Part1
+    DIM d$, s$
+    DIM fcd$, lcd$, lns$, tns$, toc$
+    IF VAL(Ty$) = 1 THEN
+        AddLine "4", "Object", "Pick a " + Number(LEN(Hi$)) + " Digit Number from " + RIGHT$(STRING$(LEN(Hi$), "0") + Lo$, LEN(Hi$)) + " to " + Hi$
+    ELSE
+        AddLine "4", "Object", "Pick " + Px$ + " " + Number(LEN(Hi$)) + " Digit Numbers from " + RIGHT$(STRING$(LEN(Hi$), "0") + Lo$, LEN(Hi$)) + " to " + Hi$
+        IF VAL(Ty$) = 3 THEN
+            AddLine "4", ".", "and a " + Number(LEN(Xh$)) + " Digit " + Xp$ + " Number from " + RIGHT$(STRING$(LEN(Xh$), "0") + Xl$, LEN(Hi$)) + " to " + Xh$
+        END IF
+    END IF
+    Start
+    WHILE NOT EOF(3)
+    INPUT #3, d$
+    ReDate d$
+    IF fcd$ = "" THEN fcd$ = d$
+    lcd$ = d$
+    LINE INPUT #3, lns$
+    Sequent lns$
+    tns$ = MID$(STR$(VAL(tns$) + 1), 2)
+    AddLine "6", d$, lns$
+    WEND
+    CLOSE #3
+    IF VAL(Ty$) = 1 THEN Stno$ = lns$
+    Start
+    WHILE NOT EOF(3)
+    INPUT #3, d$
+    ReDate d$
+    LINE INPUT #3, s$
+    Sequent s$
+    IF lns$ = s$ THEN toc$ = MID$(STR$((VAL(toc$) + 1)), 2)
+    WEND
+    CLOSE #3
+    AddLine "4", "First Day Collected", "." + fcd$
+    AddLine "4", "Last Day Collected ", "." + lcd$
+    IF VAL(Ty$) = 1 THEN
+        AddLine "4", "Total Numbers Collected", "." + tns$
+        AddLine "4", "Last Number Collected", "." + lns$
+    ELSE
+        AddLine "4", "Total Sequences Collected", "." + tns$
+        AddLine "4", "Last Sequence Collected", "." + lns$
+    END IF
+    IF VAL(toc$) > 1 THEN
+        AddLine "4", "-", "-"
+        IF VAL(Ty$) = 1 THEN
+            AddLine "4", "Occurence Dates of Last Number", ""
+        ELSE
+            AddLine "4", "Occurence Dates of Last Sequence", ""
+        END IF
+        AddLine "4", "- ", " -"
+        Start
+        WHILE NOT EOF(3)
+        INPUT #3, d$
+        ReDate d$
+        LINE INPUT #3, s$
+        Sequent s$
+        IF lns$ = s$ THEN
+            AddLine "4", d$ + ".", "." + s$
+        END IF
+        WEND
+        CLOSE #3
+        AddLine "4", "Total Occurences of " + lns$, "." + toc$
+    END IF
+END SUB
+
+SUB Part2
+    DIM c%, d$, i$, n$, o$, p$, q$, r%, s$, sd$, sn$, t%, u%, v$, w%, x%, y%, z%
+    q$ = CHR$(34)
+    IF VAL(Ty$) <= 1 THEN
+        AddLine "4", "-", "-"
+        AddLine "4", "ù " + Ln$ + " Game Number Statistics ù", ""
+        AddLine "4", "The 10 Best Prospective Picks According to", ""
+        AddLine "4", "the Occurences of the Numbers 0 thru 9 in Each Column.", ""
+        AddLine "4", "- ", " -"
+        FOR r% = 0 TO 9
+        FOR c% = 1 TO LEN(Hi$)
+        T1(0, r%, c%) = 0
+        T1(1, r%, c%) = r%
+        NEXT
+        NEXT
+        Start
+        WHILE NOT EOF(3)
+        INPUT #3, d$
+        LINE INPUT #3, n$
+        t% = t% + 1
+        n$ = RIGHT$(STRING$(LEN(Hi$), "0") + n$, LEN(Hi$))
+        Stno$ = n$
+        FOR c% = 1 TO LEN(Hi$)
+        r% = VAL(MID$(n$, c%, 1))
+        T1(0, r%, c%) = T1(0, r%, c%) + 1
+        NEXT
+        WEND
+        CLOSE #3
+        FOR c% = 1 TO LEN(Hi$)
+        FOR x% = 0 TO 9
+        FOR y% = x% TO 9
+        IF T1(0, x%, c%) < T1(0, y%, c%) THEN
+            SWAP T1(0, x%, c%), T1(0, y%, c%)
+            SWAP T1(1, x%, c%), T1(1, y%, c%)
+        END IF
+        NEXT
+        NEXT
+        NEXT
+        FOR r% = 0 TO 9
+        i$ = "Pick #" + RIGHT$("00" + MID$(STR$(r% + 1), 2), 2) + " ("
+        FOR c% = 1 TO LEN(Hi$)
+        i$ = i$ + MID$(STR$(T1(1, r%, c%)), 2)
+        NEXT
+        i$ = i$ + ") "
+        FOR c% = 1 TO LEN(Hi$)
+        i$ = i$ + "("
+        i$ = i$ + RIGHT$("0" + MID$(STR$(T1(1, r%, c%)), 2), 1) + "x"
+        i$ = i$ + RIGHT$("00" + MID$(STR$(T1(0, r%, c%)), 2), 2) + "="
+        i$ = i$ + RIGHT$("00" + MID$(STR$(CINT(T1(0, r%, c%) * 100 / t%)), 2), 2) + "%"
+        i$ = i$ + ")"
+        NEXT
+        AddLine "4", i$, "."
+        NEXT
+        AddLine "4", "-", "-"
+        AddLine "4", "The " + Ln$ + " Game Numbers That Have Occured", ""
+        AddLine "4", "More Than Once Within the Collection Period.", ""
+        AddLine "4", "- ", " -"
+        AddLine "4", "Number", "Occurences"
+        FOR x% = VAL(Lo$) TO VAL(Hi$)
+        n$ = MID$(STR$(x%), 2)
+        Sequent n$
+        t% = 0
+        Start
+        WHILE NOT EOF(3)
+        INPUT #3, d$
+        sd$ = d$
+        LINE INPUT #3, s$
+        sn$ = s$
+        Sequent s$
+        IF s$ = n$ THEN t% = t% + 1
+        WEND
+        IF t% > 1 THEN
+            IF o$ = "" THEN o$ = "+"
+            AddLine "4", n$, "x" + MID$(STR$(t%), 2)
+        END IF
+        NEXT
+        IF o$ = "" THEN AddLine "4", "None", "0"
+        AddLine "4", "-", "-"
+        AddLine "4", "The " + Ln$ + " " + q$ + "Street Number" + q$, ""
+        AddLine "4", "for the Benefit of Those That Play the Game!", ""
+        AddLine "4", "- ", " -"
+        AddLine "4", sn$, "."
+        FOR r% = 0 TO 9
+        s$ = ""
+        FOR c% = 1 TO LEN(sn$)
+        v$ = RIGHT$("0" + MID$(STR$(VAL(MID$(sn$, c%, 1)) + c%), 2), 1)
+        s$ = s$ + v$
+        NEXT
+        AddLine "4", s$, "."
+        sn$ = s$
+        NEXT
+    ELSEIF VAL(Ty$) = 2 THEN
+        AddLine "4", "-", "-"
+        AddLine "4", "The " + Ln$ + " Numbers", ""
+        AddLine "4", "Arranged in a Sorted Sequence According to Occurence.", ""
+        AddLine "4", "- ", " -"
+        FOR x% = VAL(Lo$) TO VAL(Hi$)
+        T2(0, x%) = 0
+        T2(1, x%) = x%
+        NEXT
+        Start
+        WHILE NOT EOF(3)
+        INPUT #3, d$
+        t% = t% + 1
+        FOR x% = 1 TO VAL(Px$)
+        INPUT #3, n$
+        T2(0, VAL(n$)) = T2(0, VAL(n$)) + 1
+        T2(1, VAL(n$)) = VAL(n$)
+        NEXT
+        WEND
+        CLOSE #3
+        FOR x% = VAL(Lo$) TO VAL(Hi$)
+        FOR y% = x% TO VAL(Hi$)
+        IF T2(0, x%) < T2(0, y%) THEN
+            SWAP T2(0, x%), T2(0, y%)
+            SWAP T2(1, x%), T2(1, y%)
+        END IF
+        NEXT
+        NEXT
+        y% = 0
+        FOR x% = VAL(Lo$) TO VAL(Hi$)
+        y% = y% + 1
+        Ar(0, y%) = T2(0, x%)
+        Ar(1, y%) = T2(1, x%)
+        IF y% = VAL(Px$) THEN
+            FOR w% = 1 TO VAL(Px$)
+            FOR z% = w% TO VAL(Px$)
+            IF Ar(1, w%) > Ar(1, z%) THEN
+                SWAP Ar(0, w%), Ar(0, z%)
+                SWAP Ar(1, w%), Ar(1, z%)
+            END IF
+            NEXT
+            NEXT
+            FOR z% = 1 TO VAL(Px$)
+            s$ = s$ + "(" + RIGHT$("00" + MID$(STR$(Ar(1, z%)), 2), 2) + "x" + RIGHT$("000" + MID$(STR$(Ar(0, z%)), 2), 3) + ")"
+            NEXT
+            AddLine "4", s$, "."
+            s$ = ""
+            y% = 0
+        END IF
+        NEXT
+    ELSEIF VAL(Ty$) = 3 THEN
+        AddLine "4", "-", "-"
+        AddLine "4", "The " + Ln$ + " Game Numbers and " + Xp$ + " Number", ""
+        AddLine "4", "Arranged in a Sorted Sequence According to Occurence.", ""
+        AddLine "4", "- ", " -"
+        FOR x% = VAL(Lo$) TO VAL(Hi$)
+        T2(0, x%) = 0
+        T2(1, x%) = x%
+        NEXT
+        FOR x% = VAL(Xl$) TO VAL(Xh$)
+        T3(0, x%) = 0
+        T3(1, x%) = x%
+        NEXT
+        Start
+        WHILE NOT EOF(3)
+        INPUT #3, d$
+        t% = t% + 1
+        FOR x% = 1 TO VAL(Px$)
+        INPUT #3, n$
+        T2(0, VAL(n$)) = T2(0, VAL(n$)) + 1
+        T2(1, VAL(n$)) = VAL(n$)
+        NEXT
+        INPUT #3, n$
+        T3(0, VAL(n$)) = T3(0, VAL(n$)) + 1
+        T3(1, VAL(n$)) = VAL(n$)
+        WEND
+        CLOSE #3
+        FOR x% = VAL(Lo$) TO VAL(Hi$)
+        FOR y% = x% TO VAL(Hi$)
+        IF T2(0, x%) < T2(0, y%) THEN
+            SWAP T2(0, x%), T2(0, y%)
+            SWAP T2(1, x%), T2(1, y%)
+        END IF
+        NEXT
+        NEXT
+        FOR x% = VAL(Xl$) TO VAL(Xh$)
+        FOR y% = x% TO VAL(Xh$)
+        IF T3(0, x%) < T3(0, y%) THEN
+            SWAP T3(0, x%), T3(0, y%)
+            SWAP T3(1, x%), T3(1, y%)
+        END IF
+        NEXT
+        NEXT
+        u% = 0
+        y% = 0
+        FOR x% = VAL(Lo$) TO VAL(Hi$)
+        y% = y% + 1
+        Ar(0, y%) = T2(0, x%)
+        Ar(1, y%) = T2(1, x%)
+        IF y% = VAL(Px$) THEN
+            FOR w% = 1 TO VAL(Px$)
+            FOR z% = w% TO VAL(Px$)
+            IF Ar(1, w%) > Ar(1, z%) THEN
+                SWAP Ar(0, w%), Ar(0, z%)
+                SWAP Ar(1, w%), Ar(1, z%)
+            END IF
+            NEXT
+            NEXT
+            FOR z% = 1 TO VAL(Px$)
+            s$ = s$ + "(" + RIGHT$("00" + MID$(STR$(Ar(1, z%)), 2), 2) + "x" + RIGHT$("000" + MID$(STR$(Ar(0, z%)), 2), 3) + ")"
+            NEXT
+            u% = u% + 1
+            IF u% <= VAL(Xh$) THEN
+                s$ = s$ + "..{" + RIGHT$("00" + MID$(STR$(T3(1, u%)), 2), 2) + "x" + RIGHT$("000" + MID$(STR$(T3(0, u%)), 2), 3) + "}"
+            END IF
+            AddLine "4", s$, "."
+            s$ = ""
+            y% = 0
+        END IF
+        NEXT
+    END IF
+END SUB
+
+SUB Purge
+    DIM f$
+    MKDIR "text"
+    SHELL "dir text > text.shl /B"
+    Flt% = 0
+    CLOSE : OPEN "text.shl" FOR INPUT AS #1
+    IF Flt% = 0 THEN
+        WHILE NOT EOF(1)
+        LINE INPUT #1, f$
+        SELECT CASE UCASE$(LEFT$(f$, 1))
+            CASE "0" TO "9", "A" TO "Z"
+                KILL "text\" + f$
+        END SELECT
+        WEND
+    ELSE
+        Flt% = 0
+    END IF
+    CLOSE
+    KILL "text.shl"
+END SUB
+
+SUB ReDate (i$)
+    DIM c$, d$, m$, x%, y$
+    Filter i$
+    FOR x% = 1 TO LEN(i$)
+    IF x% = 1 THEN
+        m$ = RIGHT$("00" + MID$(STR$(VAL(i$)), 2), 2)
+    ELSE
+        SELECT CASE MID$(i$, x%, 1)
+            CASE "0" TO "9": SkipIt
+            CASE "/"
+                IF d$ = "" THEN
+                    d$ = RIGHT$("00" + MID$(STR$(VAL(MID$(i$, x% + 1))), 2), 2)
+                ELSEIF y$ = "" THEN
+                    y$ = RIGHT$("00" + MID$(STR$(VAL(MID$(i$, x% + 1))), 2), 2)
+                    EXIT FOR
+                END IF
+        END SELECT
+    END IF
+    NEXT
+    SELECT CASE DateCode$
+        CASE "MM/DD/YY": i$ = m$ + "/" + d$ + "/" + y$
+        CASE "DD/MM/YY": i$ = d$ + "/" + m$ + "/" + y$
+        CASE "MM/DD/YYYY": i$ = m$ + "/" + d$ + "/" + LEFT$(RIGHT$(DATE$, 4), 2) + y$
+        CASE "DD/MM/YYYY": i$ = d$ + "/" + m$ + "/" + LEFT$(RIGHT$(DATE$, 4), 2) + y$
+        CASE "DD MM YYYY": i$ = d$ + " " + Mth(VAL(m$)) + " " + LEFT$(RIGHT$(DATE$, 4), 2) + y$
+        CASE "MM DD YYYY": i$ = Mth(VAL(m$)) + " " + d$ + ", " + LEFT$(RIGHT$(DATE$, 4), 2) + y$
+        CASE ELSE: i$ = m$ + "/" + d$ + "/" + y$
+    END SELECT
+END SUB
+
+SUB Rstv (i$)
+    Filename$ = i$
+    Hd$ = i$
+    Ln$ = i$
+    Ty$ = i$
+    Px$ = i$
+    Lo$ = i$
+    Hi$ = i$
+    Xp$ = i$
+    Xl$ = i$
+    Xh$ = i$
+END SUB
+
+SUB SayIt (i$, v%, f%, B%)
+    DIM l$, r$
+    l$ = LEFT$(i$, LEN(i$) / 2)
+    r$ = MID$(i$, LEN(l$) + 1)
+    l$ = RIGHT$(STRING$(40, 32) + l$, 40)
+    r$ = LEFT$(r$ + STRING$(40, 32), 40)
+    COLOR f%, B%
+    LOCATE v%, 1, 0
+    PRINT l$; r$
+    COLOR Fgc%, Bgc%
+END SUB
+
+SUB Sequent (s$)
+    DIM n$, x%
+    s$ = LTRIM$(RTRIM$(s$))
+    IF VAL(Ty$) = 1 THEN
+        n$ = "(" + s$ + ")"
+    ELSE
+        n$ = "(" + RIGHT$(STRING$(LEN(Hi$), "0") + MID$(STR$(VAL(s$)), 2), LEN(Hi$)) + ")"
+        FOR x% = 1 TO LEN(s$)
+        IF MID$(s$, x%, 1) = "," THEN
+            n$ = n$ + "(" + RIGHT$(STRING$(LEN(Hi$), "0") + MID$(STR$(VAL(MID$(s$, x% + 1))), 2), LEN(Hi$)) + ")"
+        END IF
+        NEXT
+        IF VAL(Ty$) > 2 THEN
+            s$ = n$
+            FOR x% = LEN(s$) TO 1 STEP -1
+            IF MID$(s$, x%, 1) = "(" THEN
+                n$ = LEFT$(s$, x% - 1) + "..{" + RIGHT$(STRING$(LEN(Xh$), "0") + MID$(STR$(VAL(MID$(s$, x% + 1))), 2), LEN(Xh$)) + "}"
+                EXIT FOR
+            END IF
+            NEXT
+        END IF
+    END IF
+    s$ = n$
+END SUB
+
+SUB SkipIt
+    REM:This is a "Do Nothing" Function!
+END SUB
+
+SUB Start
+    Flt% = 0
+    CLOSE #3: OPEN "dbse\" + Filename$ FOR INPUT AS #3
+    IF Ln$ = "" THEN
+        INPUT #3, Ln$, Ty$, Px$, Lo$, Hi$
+        IF VAL(Ty$) > 2 THEN INPUT #3, Xp$, Xl$, Xh$
+        IF Flt% > 0 OR EOF(3) THEN Ln$ = Void$
+    ELSE
+        LINE INPUT #3, Hd$
+    END IF
+END SUB
+

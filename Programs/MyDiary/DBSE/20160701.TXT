@@ -1,0 +1,9 @@
+My Diary:
+What can I say?
+I started this application to test this application's operation and. . .
+when starts, it automatically creates a file
+for the present date.
+
+That's good. . .
+
+Bye!

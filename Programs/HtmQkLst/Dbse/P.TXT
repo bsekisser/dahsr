@@ -1,0 +1,3 @@
+<P....> "Paragraph"
+ALIGN = LEFT | CENTER | RIGHT | JUSTIFY,Alignment of text within the paragraph
+CLEAR = LEFT | RIGHT | ALL | BOTH,Move past picture and other objects

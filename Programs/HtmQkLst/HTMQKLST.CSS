@@ -1,0 +1,42 @@
+BODY
+   {
+   font-family:georgia,"times new roman",trebuchet,serif;
+   font-style:normal;
+   font-weight:bold;
+   }
+HR
+   {
+   color:#00f;
+   text-align:center;
+   width:90%;
+   }
+LI
+   {
+   text-indent:4%;
+   }
+.mhdr, .shdr
+   {
+   background:#00f;
+   color:#fff;
+   font-size:30px;
+   text-align:center;
+   }
+.shdr
+   {
+   font-size:14px;
+   }
+.mtxt
+   {
+   color:#00f;
+   font-size:20px;
+   }
+.stxt
+   {
+   color:#00f;
+   font-size:18px;
+   }
+.text
+   {
+   color:#000;
+   font-size:16px;
+   }

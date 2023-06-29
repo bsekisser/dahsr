@@ -1,0 +1,6 @@
+My Diary Help:
+If the PRESENT DATE file is not in the database then it will be automatically created when the application is run.
+
+If the PRESENT DATE file is in the database, and if data is entered therein, then any data will not be lost when the application is run because the file will already exist.
+
+If the PRESENT DATE file is deleted on it's PRESENT DATE then the file will be recreated when the application is run on the SAME DATE of startup, but all former entered data will be lost.

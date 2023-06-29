@@ -1,0 +1,7 @@
+<SCRIPT ...>
+DEFER: Continue loading page while downloading script
+EVENT: the event this script handles
+FOR: object for which this script is an event handler
+LANGUAGE = JAVASCRIPT | LIVESCRIPT | VBSCRIPT | other Deprecated indicator of language
+SRC: External source for script
+TYPE = "text/javascript" | "text/vbscript" | other scripting language Which scripting language to use

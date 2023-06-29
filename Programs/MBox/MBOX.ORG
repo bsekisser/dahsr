@@ -1,0 +1,452 @@
+DECLARE SUB LoadSpecReqs (g$, p$)
+DECLARE SUB PurgeTarget ()
+DECLARE SUB LoadPage ()
+DECLARE SUB LoadPlaylist (g$, p$)
+DECLARE SUB LoadGroups ()
+DECLARE SUB FormatLine (i$)
+DECLARE SUB Sftr (c$)
+DECLARE SUB Shdr (c$)
+DECLARE SUB Hhdr (c$)
+DECLARE SUB Hftr (c$)
+DECLARE SUB Format ()
+DECLARE SUB Mask ()
+DECLARE SUB SayIt (i$, v%, f%, b%)
+DECLARE SUB Initialize ()
+DECLARE SUB Getkey (a%, k$)
+DECLARE SUB Main ()
+DECLARE SUB CreateDirectories ()
+    CONST BOOT = "mbox.bas", INI = "mbox.ini"
+    COMMON SHARED Bgc%
+    COMMON SHARED Fgc%
+    COMMON SHARED Flt%
+    COMMON SHARED LDir$
+    COMMON SHARED LTxt$
+    COMMON SHARED SDir$
+    COMMON SHARED TDir$
+    COMMON SHARED Title$
+    ON ERROR GOTO Trap
+    Initialize
+    DO
+    Main
+    LOOP
+END
+Trap: Flt% = ERR: RESUME NEXT
+
+SUB AddLine (i$, j$, m$, p$, q$)
+END SUB
+
+SUB CreateDirectories
+    DIM i$, x%, y%
+    FOR x% = 1 TO 3
+    SELECT CASE x%
+        CASE 1: i$ = LDir$
+        CASE 2: i$ = SDir$
+        CASE 3: i$ = TDir$
+    END SELECT
+    FOR y% = 1 TO LEN(i$)
+    SELECT CASE MID$(i$, y%, 1)
+        CASE "/", "\": MKDIR LEFT$(i$, y% - 1)
+    END SELECT
+    NEXT
+    NEXT
+END SUB
+
+SUB Cuckoo
+    SOUND 1400, 3
+    SOUND 0, 2
+    SOUND 1155, 4
+    SOUND 0, 2
+END SUB
+
+SUB Format
+    DIM a%, k$
+    SayIt "Creating " + CHR$(34) + "mbox.htm" + CHR$(34) + "!", 2, 14, Bgc%
+    CreateDirectories
+    PurgeTarget
+    LoadGroups
+    LoadPage
+    SayIt "Finished Creating " + CHR$(34) + "mbox.htm" + CHR$(34) + "!", 2, 14, Bgc%
+    Getkey a%, k$
+END SUB
+
+SUB FormatLine (i$)
+    DIM j$, x%
+    FOR x% = 1 TO LEN(i$)
+    l$ = MID$(i$, x%, 1)
+    SELECT CASE l$
+        CASE CHR$(34): l$ = "&quot;"
+        CASE CHR$(38): l$ = "&amp;"
+        CASE CHR$(39): l$ = "&apos;"
+    END SELECT
+    j$ = j$ + l$
+    NEXT
+    i$ = j$
+END SUB
+
+SUB Getkey (a%, k$)
+    DO: LOOP UNTIL INKEY$ = ""
+    DO
+    k$ = INKEY$
+    LOOP WHILE k$ = ""
+    a% = ASC(k$)
+    IF a% = 27 THEN END
+END SUB
+
+SUB Hftr (c$)
+    DIM n%, q$, x%
+    q$ = CHR$(34)
+    FOR x% = 1 TO LEN(c$)
+    n% = VAL(MID$(c$, x%, 1))
+    PRINT #n%, "</td></tr>"
+    PRINT #n%, "<tr align="; q$; "center"; q$;
+    PRINT #n%, " id="; q$; "t5"; q$;
+    PRINT #n%, " width="; q$; "100%"; q$; "><td>"
+    PRINT #n%, "Last Update: "; DATE$
+    PRINT #n%, "</td></tr></td>"
+    PRINT #n%, "</table></table>"
+    PRINT #n%, "</body>"
+    PRINT #n%, "</html>"
+    NEXT
+END SUB
+
+SUB Hhdr (c$)
+    DIM f$, n%, q$, x%
+    f$ = "times new roman"
+    q$ = CHR$(34)
+    FOR x% = 1 TO LEN(c$)
+    n% = VAL(MID$(c$, x%, 1))
+    PRINT #n%, "<html>"
+    PRINT #n%, "<head><title>"; Title$; "</title></head>"
+    PRINT #n%, "<body bgcolor="; q$; "cccccc"; q$; ">"
+    PRINT #n%, ""
+    PRINT #n%, "<style>"
+    PRINT #n%, " #mhdr {color:magenta; font-family:"; f$; "; font-weight;bold; font-size:26;}"
+    PRINT #n%, " #t2 {color:blue; font-family:"; f$; "; font-weight:bold; font-size:20;}"
+    PRINT #n%, " #t3 {color:black; font-family:"; f$; "; font-weight:normal; font-size:16;}"
+    PRINT #n%, " #t4 {color:blue; font-family:"; f$; "; font-weight:normal; font-size:14;}"
+    PRINT #n%, " #t5 {color:black; font-family:"; f$; "; font-weight:normal; font-size:12;}"
+    PRINT #n%, "</style>"
+    PRINT #n%, ""
+    PRINT #n%, "<table align="; q$; "center"; q$;
+    PRINT #n%, " border="; q$; "5"; q$;
+    PRINT #n%, " bgcolor="; q$; "white"; q$;
+    PRINT #n%, " cellpadding="; q$; "5"; q$;
+    PRINT #n%, " cellspacing="; q$; "0"; q$;
+    PRINT #n%, " width="; q$; "100%"; q$; ">"
+    PRINT #n%, "<td align="; q$; "center"; q$;
+    PRINT #n%, " width="; q$; "100%"; q$; ">"
+    PRINT #n%, ""
+    PRINT #n%, "<table align="; q$; "center"; q$;
+    PRINT #n%, " border="; q$; "0"; q$;
+    PRINT #n%, " bgcolor="; q$; "white"; q$;
+    PRINT #n%, " cellpadding="; q$; "5"; q$;
+    PRINT #n%, " cellspacing="; q$; "0"; q$;
+    PRINT #n%, " width="; q$; "100%"; q$; ">"
+    PRINT #n%, ""
+    PRINT #n%, "<td align="; q$; "center"; q$;
+    PRINT #n%, " id="; q$; "mhdr"; q$;
+    PRINT #n%, " width="; q$; "100%"; q$; ">"
+    PRINT #n%, Title$;
+    IF n% = 4 THEN
+        PRINT #n%, "<br><a id = "; q$; "t4"; q$; " href="; q$; "mbox.htm"; q$; ">"
+        PRINT #n%, "Return to Main Selections</a>"
+    END IF
+    PRINT #n%, "</td>"
+    PRINT #n%, "<tr align="; q$; "left"; q$;
+    PRINT #n%, " id="; q$; "t3"; q$;
+    PRINT #n%, " width="; q$; "100%"; q$; "><td>"
+    NEXT
+END SUB
+
+SUB Initialize
+    DIM i$, x%
+    Bgc% = 1
+    Fgc% = 15
+    Flt% = 0
+    LDir$ = "library\"
+    LTxt$ = "library.txt"
+    SDir$ = "source\"
+    TDir$ = "target\"
+    Title$ = "Media Box"
+    CLOSE : OPEN INI FOR INPUT AS #1
+    IF Flt% = 0 THEN
+        WHILE NOT EOF(1)
+        LINE INPUT #1, i$
+        FOR x% = 1 TO LEN(i$)
+        IF x% < LEN(i$) THEN
+            SELECT CASE UCASE$(LEFT$(i$, x%))
+                CASE "LTXT=": LTxt$ = MID$(i$, x% + 1): EXIT FOR
+                CASE "LDIR=": LDir$ = MID$(i$, x% + 1): EXIT FOR
+                CASE "SDIR=": SDir$ = MID$(i$, x% + 1): EXIT FOR
+                CASE "TDIR=": TDir$ = MID$(i$, x% + 1): EXIT FOR
+            END SELECT
+        END IF
+        NEXT
+        WEND
+    END IF
+END SUB
+
+SUB LoadGroups
+    DIM g$, i$
+    Flt% = 0
+    CLOSE
+    OPEN LDir$ + LTxt$ FOR INPUT AS #1
+    OPEN "playlist.txt" FOR OUTPUT AS #2
+    WHILE NOT EOF(1)
+    INPUT #1, g$
+    SELECT CASE UCASE$(LEFT$(g$, 1))
+        CASE "0" TO "9", "A" TO "Z"
+            LINE INPUT #1, i$
+            CLOSE #2: OPEN "playlist.txt" FOR INPUT AS #2
+            DO
+            WHILE NOT EOF(2)
+            LINE INPUT #2, i$
+            IF i$ = g$ THEN EXIT DO
+            WEND
+            CLOSE #2: OPEN "playlist.txt" FOR APPEND AS #2
+            PRINT #2, g$
+            EXIT DO
+            LOOP
+    END SELECT
+    WEND
+    CLOSE
+END SUB
+
+SUB LoadPage
+    DIM g$, p$, q$
+    p$ = "0"
+    q$ = CHR$(34)
+    Flt% = 0
+    CLOSE
+    OPEN "playlist.txt" FOR INPUT AS #1
+    OPEN TDir$ + "mbox.htm" FOR OUTPUT AS #2
+    Hhdr "2"
+    PRINT #2, "<p align="; q$; "center"; q$;
+    PRINT #2, " id="; q$; "t3"; q$; ">"
+    IF Flt% = 0 THEN
+        WHILE NOT EOF(1)
+        INPUT #1, g$
+        p$ = MID$(STR$(VAL(p$) + 1), 2)
+        PRINT #2, "<a href="; q$; "p"; p$; ".htm"; q$; ">"; g$; "</a><br>"
+        LoadPlaylist g$, p$
+        WEND
+    ELSE
+        Flt% = 0
+    END IF
+    CLOSE #1: OPEN "specreqs.txt" FOR INPUT AS #1
+    IF Flt% = 0 THEN
+        WHILE NOT EOF(1)
+        INPUT #1, g$
+        p$ = MID$(STR$(VAL(p$) + 1), 2)
+        PRINT #2, "<a href="; q$; "p"; p$; ".htm"; q$; ">* "; g$; " *</a><br>"
+        LoadSpecReqs g$, p$
+        WEND
+    ELSE
+        Flt% = 0
+    END IF
+    PRINT #2, "<p align="; q$; "center"; q$; " id="; q$; "t2"; q$; ">"
+    PRINT #2, "*Special Request Titles*</p>"
+    PRINT #2, "<p align="; q$; "center"; q$; " id="; q$; "t4"; q$; ">"
+    PRINT #2, "If any media files have been added or updated"
+    PRINT #2, " then you must update the application's access file: "
+    PRINT #2, CHR$(34); LDir$ + LTxt$; CHR$(34); "<br>"
+    PRINT #2, " through the "; CHR$(34); "command prompt"; CHR$(34)
+    PRINT #2, " and run the "; CHR$(34); "MBox.bas"; CHR$(34); " file"
+    PRINT #2, " to reflect the changes.</p>"
+    Hftr "2"
+    CLOSE
+END SUB
+
+SUB LoadPlaylist (g$, p$)
+    DIM i$, j$, m$, q$, x%
+    q$ = CHR$(34)
+    CLOSE #3: OPEN LDir$ + LTxt$ FOR INPUT AS #3
+    CLOSE #4: OPEN TDir$ + "p" + p$ + ".htm" FOR OUTPUT AS #4
+    CLOSE #5: OPEN TDir$ + "p" + p$ + ".wpl" FOR OUTPUT AS #5
+    Hhdr "4"
+    Shdr "5"
+    PRINT #4, "<p align="; q$; "center"; q$;
+    PRINT #4, " id="; q$; "t2"; q$; ">"; g$; "</p>"
+    PRINT #4, "<a href="; q$; "p"; p$; ".wpl"; q$; ">Play</a>: All<br>"
+    WHILE NOT EOF(3)
+    LINE INPUT #3, i$
+    IF LEFT$(i$, LEN(g$)) = g$ THEN
+        j$ = MID$(i$, LEN(g$) + 2)
+        m$ = MID$(STR$(VAL(m$) + 1), 2)
+        FOR x% = LEN(j$) TO 1 STEP -1
+        IF MID$(j$, x%, 1) = "." THEN
+            j$ = LEFT$(j$, x%)
+            EXIT FOR
+        END IF
+        NEXT
+        FOR x% = 1 TO LEN(j$)
+        IF MID$(j$, x%, 1) = "," THEN
+            j$ = LEFT$(j$, x%) + " " + MID$(j$, x% + 1)
+        END IF
+        NEXT
+        PRINT #4, "<a href="; q$; SDir$; i$; q$; ">Play</a>: "; j$; "<br>"
+        FormatLine i$
+        PRINT #5, "<media src="; q$; SDir$; i$; q$; "/>"
+    END IF
+    WEND
+    Hftr "4"
+    Sftr "5"
+END SUB
+
+SUB LoadSpecReqs (g$, p$)
+    DIM i$, j$, m$, q$, x%, y%
+    q$ = CHR$(34)
+    CLOSE #3: OPEN LDir$ + LTxt$ FOR INPUT AS #3
+    CLOSE #4: OPEN TDir$ + "p" + p$ + ".htm" FOR OUTPUT AS #4
+    CLOSE #5: OPEN TDir$ + "p" + p$ + ".wpl" FOR OUTPUT AS #5
+    Hhdr "4"
+    Shdr "5"
+    PRINT #4, "<p align="; q$; "center"; q$;
+    PRINT #4, " id="; q$; "t2"; q$; ">"; g$; "</p>"
+    PRINT #4, "<a href="; q$; "p"; p$; ".wpl"; q$; ">Play</a>: All<br>"
+    WHILE NOT EOF(3)
+    LINE INPUT #3, i$
+    FOR y% = 1 TO LEN(i$)
+    IF UCASE$(MID$(i$, y%, LEN(g$))) = UCASE$(g$) THEN
+        j$ = i$
+        m$ = MID$(STR$(VAL(m$) + 1), 2)
+        FOR x% = LEN(j$) TO LEN(j$) - 5 STEP -1
+        IF MID$(j$, x%, 1) = "." THEN
+            j$ = LEFT$(j$, x%)
+            EXIT FOR
+        END IF
+        NEXT
+        FOR x% = 1 TO LEN(j$)
+        IF MID$(j$, x%, 1) = "," THEN
+            j$ = LEFT$(j$, x%) + " " + MID$(j$, x% + 1)
+        END IF
+        NEXT
+        PRINT #4, "<a href="; q$; SDir$; i$; q$; ">Play</a>: "; j$; "<br>"
+        FormatLine i$
+        PRINT #5, "<media src="; q$; SDir$; i$; q$; "/>"
+        EXIT FOR
+    END IF
+    NEXT
+    WEND
+    Hftr "4"
+    Sftr "5"
+END SUB
+
+SUB Main
+    DIM a%, k$
+    Mask
+    IF LDir$ = "?" THEN
+        SayIt "The Library File is Not Properly Formatted:", 14, 13, Bgc%
+        SayIt "Did you use the " + CHR$(34) + "/B" + CHR$(34) + " Switch", 15, 13, Bgc%
+        SayIt "within the Command Prompt " + CHR$(34) + "DIR >" + CHR$(34) + " format?", 16, 13, Bgc%
+        DO
+        Getkey a%, k$
+        LOOP
+    ELSEIF LTxt$ = "" OR LDir$ = "" OR SDir$ = "" OR TDir$ = "" THEN
+        IF LTxt$ = "" THEN
+            SayIt "The Library Filename is Not Specified:", 14, 13, Bgc%
+        ELSEIF LDir$ = "" THEN
+            SayIt "The Library Directory is Not Specified:", 14, 13, Bgc%
+        ELSEIF SDir$ = "" THEN
+            SayIt "The Source Directory is Not Specified:", 14, 13, Bgc%
+        ELSEIF TDir$ = "" THEN
+            SayIt "The Target Directory is Not Specified:", 14, 13, Bgc%
+        END IF
+        SayIt "Press ENTER to Edit the " + CHR$(34) + "mbox.ini" + CHR$(34) + " File!", 15, 13, Bgc%
+        DO
+        Getkey a%, k$
+        IF k$ = CHR$(13) THEN
+            SHELL "notepad.exe mbox.ini"
+            RUN "mbox.bas"
+        END IF
+        LOOP
+    ELSE
+        SayIt "ENTER to Format", 13, 14, Bgc%
+        SayIt "TAB to Edit Special Requests", 14, 14, Bgc%
+        SayIt "To Update the Library, Go to the Command Prompt and Enter the Line:", 16, 11, Bgc%
+        SayIt CHR$(34) + "dir " + LEFT$(SDir$, LEN(SDir$) - 1) + " > " + LDir$ + "library.txt /B" + CHR$(34), 17, 15, Bgc%
+        SayIt ". . . and The Command Prompt " + CHR$(34) + "/B" + CHR$(34) + " switch MUST be utilized!", 18, 14, Bgc%
+        DO
+        Getkey a%, k$
+        SELECT CASE UCASE$(k$)
+            CASE CHR$(9)
+                SHELL "notepad.exe mbox.ini"
+                RUN "mbox.bas"
+            CASE CHR$(13)
+                Format
+                RUN BOOT
+            CASE CHR$(0) + ";"
+                SHELL "notepad.exe specreqs.txt"
+                RUN "mbox.bas"
+        END SELECT
+        LOOP
+    END IF
+END SUB
+
+SUB Mask
+    DIM x%
+    CLS
+    COLOR Fgc%, Bgc%
+    FOR x% = 1 TO 23
+    SELECT CASE x%
+        CASE 1: PRINT "É"; STRING$(78, 205); "»"
+        CASE 3, 21: PRINT "Ç"; STRING$(78, 196); "¶"
+        CASE 23: PRINT "È"; STRING$(78, 205); "¼"
+        CASE ELSE: PRINT "º"; STRING$(78, 32); "º"
+    END SELECT
+    NEXT
+    SayIt Title$ + " Generator", 2, 11, Bgc%
+    SayIt "Library Filename: " + CHR$(34) + LTxt$ + CHR$(34), 8, 10, 1
+    SayIt "Library Directory: " + CHR$(34) + LDir$ + CHR$(34), 9, 10, 1
+    SayIt "Source Directory: " + CHR$(34) + SDir$ + CHR$(34), 10, 10, 1
+    SayIt "Target Directory: " + CHR$(34) + TDir$ + CHR$(34), 11, 10, 1
+    SayIt "ù ESC to End ù", 22, Fgc%, Bgc%
+END SUB
+
+SUB PurgeTarget
+    DIM i$
+    SHELL "dir " + LEFT$(TDir$, LEN(TDir$) - 1) + " > purge.shl /B"
+    CLOSE : OPEN "purge.shl" FOR INPUT AS #1
+    WHILE NOT EOF(1)
+    LINE INPUT #1, i$
+    SELECT CASE UCASE$(LEFT$(i$, 1))
+        CASE "0" TO "9", "A" TO "Z": KILL TDir$ + i$
+    END SELECT
+    WEND
+    CLOSE
+    KILL "purge.shl"
+END SUB
+
+SUB SayIt (i$, v%, f%, b%)
+    DIM l$, r$
+    l$ = LEFT$(i$, LEN(i$) / 2)
+    r$ = MID$(i$, LEN(l$) + 1)
+    l$ = RIGHT$(STRING$(39, 32) + l$, 39)
+    r$ = LEFT$(r$ + STRING$(39, 32), 39)
+    COLOR f%, b%
+    LOCATE v%, 2
+    PRINT l$; r$
+    COLOR Fgc%, Bgc%
+END SUB
+
+SUB Sftr (c$)
+    DIM n%, x%
+    FOR x% = 1 TO LEN(c$)
+    n% = VAL(MID$(c$, x%, 1))
+    PRINT #n%, "</seq>"
+    PRINT #n%, "</body>"
+    PRINT #n%, "</smil>"
+    NEXT
+END SUB
+
+SUB Shdr (c$)
+    DIM n%, x%
+    FOR x% = 1 TO LEN(c$)
+    n% = VAL(MID$(c$, x%, 1))
+    PRINT #n%, "<smil>"
+    PRINT #n%, "<head><title>"; Title$; "</title></head>"
+    PRINT #n%, "<body>"
+    PRINT #n%, "<seq>"
+    NEXT
+END SUB
+

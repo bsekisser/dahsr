@@ -1,0 +1,8 @@
+<SELECT ...>
+NAME: name of this form element
+MULTIPLE: allow more than one choice
+SIZE: how many options to show
+READONLY: don't let the user change the value of this field
+DISABLED: don't let the user do anything with this field
+LANGUAGE = "JavaScript" | "JavaScript1.1" | "VBScript" | other language scripting language to use
+onChange: what to do when a new option is selected

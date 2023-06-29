@@ -1,0 +1,29 @@
+<INPUT ...>
+TYPE = TEXT | CHECKBOX | RADIO | PASSWORD | HIDDEN | SUBMIT | RESET | BUTTON | FILE | IMAGE /what type of field
+NAME: name of this form field
+VALUE: initial or only value of this field
+SIZE: how wide the text field should be
+MAXLENGTH: maximum number of characters
+CHECKED: check this checkbox or radio button
+BORDER: border around image
+SRC: URL of image
+ALT: text to show if you don't show the picture
+LOWSRC: a version of the picture that isn't such a big file
+WIDTH: width of image
+HEIGHT: height of image
+ALIGN = LEFT | RIGHT | TOP | TEXTTOP | MIDDLE | ABSMIDDLE | CENTER | BOTTOM | ABSBOTTOM | BASELINE /how text should flow around the picture
+VSPACE: vertical distance between the picture and the text
+HSPACE: horizontal distance between the picture and the text
+READONLY: the value of this field cannot be changed
+DISABLED: don't let the user do anything with this field
+ACCESSKEY
+TABINDEX: tab order
+LANGUAGE = "JavaScript" | "JavaScript1.1" | "JSCRIPT" | "VBScript" | "VBS" | ... /other language scripting language to use
+onClick: when the user clicks here
+onChange: when this field is changed
+onFocus: when this field gets the focus
+onBlur: when this field loses the focus
+onKeyPress: script to run when a key is pressed
+onKeyUp: script for when a key goes up while the field has the focus
+onKeyDown: script for when a key goes down while the field has the focus
+AUTOCOMPLETE = ON | OFF /If the browser should use autocompletion for the field

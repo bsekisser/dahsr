@@ -1,0 +1,3 @@
+<OPTION ...>
+SELECTED: this option is selected by default
+VALUE: what's the value if this option is chosen

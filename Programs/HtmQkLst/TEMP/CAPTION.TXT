@@ -1,0 +1,3 @@
+<CAPTION ...>
+ALIGN = TOP | BOTTOM | LEFT | RIGHT,Alignment of caption to table
+VALIGN = TOP | BOTTOM,If caption should be above or below table

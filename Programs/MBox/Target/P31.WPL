@@ -1,0 +1,26 @@
+<smil>
+<head><title>Media Box</title></head>
+<body>
+<seq>
+<media src="c:\media\audios\The 40s,A Tree in the Meadow,Margaret Whiting (1948).mp3"/>
+<media src="c:\media\audios\The 40s,Cherokee,Charlie Barnett.mp3"/>
+<media src="c:\media\audios\The 40s,Cruisin Down the River,Frankie Carle &amp; Marjorie Hughes.mp3"/>
+<media src="c:\media\audios\The 40s,Daddy&apos;s Little Boy,The Mills Brothers.mp3"/>
+<media src="c:\media\audios\The 40s,Dear Hearts and Gentile People,Bing Crosby (1949).mp3"/>
+<media src="c:\media\audios\The 40s,Dont Sit Under the Apple Tree,Andrews Sisters.mp3"/>
+<media src="c:\media\audios\The 40s,Far Away Places,Bing Crosby.mp3"/>
+<media src="c:\media\audios\The 40s,Friendship,Kay Keiser.mp3"/>
+<media src="c:\media\audios\The 40s,I Love You,Bing Crosby (1944).mp3"/>
+<media src="c:\media\audios\The 40s,If I Didn&apos;t Care,The Ink Spots.mp3"/>
+<media src="c:\media\audios\The 40s,Meet Me in St Louis,Judy Garland.mp3"/>
+<media src="c:\media\audios\The 40s,One Has My Heart,Jimmy Wakely &amp; Mary Ford.mp3"/>
+<media src="c:\media\audios\The 40s,Ragtime Cowboy Joe.mp3"/>
+<media src="c:\media\audios\The 40s,Shoo Shoo Baby,Andrews Sisters (1944).mp3"/>
+<media src="c:\media\audios\The 40s,Slippin Around,Jimmy Wakely &amp; Margaret Whitting.mp3"/>
+<media src="c:\media\audios\The 40s,The Band Played On,Ray Noble.mp3"/>
+<media src="c:\media\audios\The 40s,There, I&apos;ve Said it Again,Vaughn Monroe.mp3"/>
+<media src="c:\media\audios\The 40s,This Ole House,Vaughn Monroe.mp3"/>
+<media src="c:\media\audios\The 40s,You&apos;ll Never Know,Dick Haymes (1943).mp3"/>
+</seq>
+</body>
+</smil>

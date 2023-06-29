@@ -1,0 +1,12 @@
+<APPLET ...>
+CODE,the applet to run
+CODEBASE,path to the applet class
+WIDTH,width of the applet
+HEIGHT,height of the applet
+ALIGN="LEFT/RIGHT/TOP/MIDDLE/BOTTOM/BASELINE",Alignment of applet to surrounding text
+VSPACE,Vertical space between applet and surrounding text
+HSPACE,Horizontal space between applet and surrounding text
+BORDER,Empty space surrounding the applet
+NAME,Name of applet for reference by other applets
+ARCHIVE,A compressed collection of applet components
+MAYSCRIPT,If Java can use JavaScript

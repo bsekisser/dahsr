@@ -1,0 +1,29 @@
+<INPUT ...>
+ACCESSKEY
+ALIGN = LEFT | RIGHT | TOP | TEXTTOP | MIDDLE | ABSMIDDLE | CENTER | BOTTOM | ABSBOTTOM | BASELINE /how text should flow around the picture
+ALT: text to show if you don't show the picture
+AUTOCOMPLETE = ON | OFF /If the browser should use autocompletion for the field
+BORDER: border around image
+CHECKED: check this checkbox or radio button
+DISABLED: don't let the user do anything with this field
+HEIGHT: height of image
+HSPACE: horizontal distance between the picture and the text
+LANGUAGE = "JavaScript" | "JavaScript1.1" | "JSCRIPT" | "VBScript" | "VBS" | ... /other language scripting language to use
+LOWSRC: a version of the picture that isn't such a big file
+MAXLENGTH: maximum number of characters
+NAME: name of this form field
+onBlur: when this field loses the focus
+onChange: when this field is changed
+onClick: when the user clicks here
+onFocus: when this field gets the focus
+onKeyDown: script for when a key goes down while the field has the focus
+onKeyPress: script to run when a key is pressed
+onKeyUp: script for when a key goes up while the field has the focus
+READONLY: the value of this field cannot be changed
+SIZE: how wide the text field should be
+SRC: URL of image
+TABINDEX: tab order
+TYPE = TEXT | CHECKBOX | RADIO | PASSWORD | HIDDEN | SUBMIT | RESET | BUTTON | FILE | IMAGE /what type of field
+VALUE: initial or only value of this field
+VSPACE: vertical distance between the picture and the text
+WIDTH: width of image

@@ -1,0 +1,11 @@
+<smil>
+<head><title>Media Box</title></head>
+<body>
+<seq>
+<media src="c:\media\audios\Albums,Gospel,The Holy Bible,Old and New Testaments,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Albums,Hank Williams Greatest,Best Songs of Hank.mp3"/>
+<media src="c:\media\audios\Albums,Honky-Tonk Piano Vol 1,Knuckles O&apos;Toole.mp3"/>
+<media src="c:\media\audios\Albums,Honky-Tonk Piano,Knuckles O&apos;Toole.mp3"/>
+</seq>
+</body>
+</smil>

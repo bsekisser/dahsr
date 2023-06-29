@@ -1,0 +1,72 @@
+'[H]Data Line Protocol:Date (MM/DD/YY),Item Information.
+03/04/13,Dr. Hagan @0900
+03/20/13,Oncology Lab, Blood Work,Come Before 1200 (1130)
+03/20/13,FCPC Bldg,Therapy,Rm #106 @ 1400
+03/25/13,This Week: Obtain Blood Test: Dr.Kamil
+04/01/13,Dr. Kamil @1040
+04/23/13,Dr.Sessions @1030
+06/03/13,Dr. Tabet @1000
+06/19/13,Dr Mack @1030
+12/30/13,Dr Smith @ 1015
+01/03/14,(Labs) Dr. Kamil @1020
+01/10/14,Dr Mack @1130
+01/16/14,Mariah Parham Remicade Infusion @1200
+02/12/14,Dr Dubinski @1015
+03/06/14,Dr. Mantyh: Duke Clinic 3-2 @1445
+03/13/14,Remicade Infusion @1100
+03/31/14,Dr Smith @ 1015
+04/03/14,(Labs-Done 03/20/14) Dr. Kamil @1200
+04/14/14,Labs for Oncology - come before 1200 - MISSED APPT!
+04/22/14,Dr. Sessions @1000
+05/12/14,Dr. Dubinski @1545
+06/02/14,Dr. Tabet @1000 (Cancelled)
+06/05/14,Dr. Smith @1015 (Levemir to 27mg)
+06/09/14,If Dr. Sessions office doesn't call by the afternoon
+06/09/14,then notify Dr. P. Smith
+06/10/14,If mg/dL avg > 140 then raise levemir units to 29mg
+06/19/14,Dr. Sessions @0950
+06/24/14,Dr. Kanth @1400
+07/14/14,Dr. Mack @1130
+07/17/14,Dr. Kamil @1020
+07/28/14,Dr. P. Smith @1000
+07/31/14,Dr. P. Smith @1500
+08/04/14,Dr. P. Smith @0910
+08/19/14,Dr. Dubinski @1500
+08/25/14,Dr. P. Smith @0930
+08/27/14,Dr. Kanth @0845
+09/04/14,Dr. Kamil @1320
+09/08/14,Obtained blood work in am for Dr. Mack
+09/09/14,Dr. Mack @1300
+09/10/14,Wound Center (Kathy) @ 1030
+09/15/14,Oncology @1000
+09/19/14,Oncology @1000
+10/15/14,Dr. P. Smith @0915
+10/30/14,Dr Kamil @1300
+11/10/14,Dr. Abels @1030
+11/25/14,Dr. Kanth @1400
+12/03/14,Wound Clinic @0900
+12/05/14,Dr. Kamil @1000
+12/08/14,Dr. Sessions @1030
+12/23/14,MPMC for Heart Monitor @1030
+12/30/14,Dr. Sessions @1040
+01/15/15,Dr. P. Smith @1245
+01/27/15,Dr. Sessions @1050
+02/05/15,Dr. Kamil @1320
+02/24/15,Dr. Sessions @1050
+03/03/15,(canceled)Dr. Abels @1330
+03/04/15,(canceled)Dr. Dubinski @1500
+04/02/15,Dr. Kamil @1040
+04/15/15,Dr. K. Subramanian @1300
+04/20/15,Dr. Mack @1100
+05/26/15,Dr. Sessions @1050
+05/27/15,Dr. Kanth @1000
+05/30/16,Bloodwork (Kamil)
+06/06/16,Dr. Bernstein @1345
+06/09/16,Dr. Kamil @1400
+07/06/16,Dr. Kanth @1400
+07/11/16,Dr. Hagan
+07/12/16,Dr. Mack @1130 (pre bloodwork)
+10/31/16,Dr. Ogle @1300
+09/09/16,PU Lisinopril Rx @ Med Arts
+09/22/16,Dr. Subramanian @1315
+11/22/16,Dr. Sessions @1050

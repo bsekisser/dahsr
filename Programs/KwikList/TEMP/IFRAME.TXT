@@ -1,0 +1,13 @@
+<IFRAME ...> "Inline Frame"
+ALIGN = LEFT | RIGHT | TOP | TEXTTOP | MIDDLE | ABSMIDDLE | CENTER | BOTTOM | ABSBOTTOM | BASELINE /alignment of the frame object to text around it
+FRAMEBORDER = 1 | 0 /if the frame should have a border around it
+HEIGHT: height of the inline frame
+HSPACE: space to the left and right of the frame
+LONGDESC: URL of a long description of the contents of the frame
+MARGINHEIGHT: internal top/bottom margin for the frame
+MARGINWIDTH: internal left/right margin for the frame
+NAME: name of this inline frame
+SCROLLING = YES | NO | AUTO /if the frame should have scroll bars
+SRC: URL of the document to go in the frame
+VSPACE: space above and below the frame
+WIDTH: width of the inline frame

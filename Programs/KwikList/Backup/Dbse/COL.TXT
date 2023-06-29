@@ -1,0 +1,5 @@
+<COL ...>
+SPAN,How many columns this affects
+ALIGN = LEFT | CENTER | RIGHT | JUSTIFY,Horizontal alignment
+WIDTH,Width of the column
+BGCOLOR,Background color of the column

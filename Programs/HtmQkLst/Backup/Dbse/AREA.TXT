@@ -1,0 +1,11 @@
+<AREA ...>
+HREF,URL you are linking to
+ALT,Alternate text if the image isn't displayed
+SHAPE = RECT | CIRCLE | POLY | DEFAULT,What shape is this area?
+COORDS,Coordinates for the link area shape
+TITLE,Short description of the area
+TARGET,What frame to go to
+NOHREF,This area is not a link
+onClick,Script action when the user clicks this area
+onMouseOver
+onMouseOut

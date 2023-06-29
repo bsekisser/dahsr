@@ -1,0 +1,2 @@
+<DL ...> "Definition List"
+COMPACT,Take up less space

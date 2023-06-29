@@ -1,0 +1,131 @@
+A        {
+         color:#00f;
+         text-decoration:none;
+         }
+A:hover  {
+         color:#fff;
+         background-color:#00f;
+         }
+BODY     {
+         background:#bce;
+         font-family:georgia,"times new roman",trebuchet,serif;
+         font-style:normal;
+         font-weight:normal;
+         }
+TABLE    {
+         background:#fff;
+         }
+p
+         {
+         color:#000;
+         text-align:left;
+         text-indent:30px;
+         }
+.btxt,
+.gtxt,
+.ital,
+.note,
+.rgst,
+.rtxt,
+.text,
+.terminal,
+.ytxt    {
+         font-size:16px;
+         }
+.btxt    {
+         color:#00f;
+         }
+.chld    {
+         color:#000;
+         font-weight:bold;
+         font-size:18px;
+         }
+.desc    {
+         color:#000;
+         font-weight:bold;
+         font-size:18px;
+         }
+.divs    {
+         color:#fff;
+         background:#484;
+         font-weight:bold;
+         font-size:18px;
+         }
+.divs A  {
+         color:#fff;
+         background:#484;
+         font-weight:bold;
+         font-size:18px;
+         }
+.fttr    {
+         color:#000;
+         background:#fff;
+         font-weight:bold;
+         font-size:12px;
+         }
+.gtxt    {
+         color:#363;
+         }
+.ital    {
+         color:#fff;
+         background:#000;
+         font-style:italic;
+         }
+.menu    {
+         color:#fff;
+         background:#00f;
+         font-weight:bold;
+         font-size:30px;
+         }
+.mhdr    {
+         color:#00f;
+         font-weight:bold;
+         font-size:30px;
+         }
+.mtxt    {
+         color:#00f;
+         font-weight:bold;
+         font-size:20px;
+         }
+.note    {
+         color:#000;
+         font-weight:bold;
+         }
+.path    {
+         color:#000;
+         font-weight:bold;
+         font-size:26px;
+         }
+.rgst    {
+         color:#000;
+         font-weight:bold;
+         }
+.rtxt    {
+         color:#f00;
+         }
+.shdr    {
+         color:#00f;
+         font-size:14px;}
+         }
+.spse    {
+         color:#000;
+         font-weight:bold;
+         font-size:18px;
+         }
+.stxt    {
+         color:#00f;
+         font-weight:bold;
+         font-size:18px;
+         }
+.text    {
+         color:#000;
+         }
+.ytxt    {
+         color:#ff0;
+         }
+.terminal
+         {
+         color:#000;
+         font-style:terminal;
+         font-weight:bold;
+         }

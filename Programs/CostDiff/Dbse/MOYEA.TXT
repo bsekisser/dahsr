@@ -1,0 +1,13 @@
+*Std Charge,Moye
+Document Prep,175,175
+Flood Certification,18,18
+HECM Counciling Fee,125,125
+MERS Registration,11,11
+Mort Ins Prem,420,420
+Origination Fee,0,1000
+Settlement/Closing Fee,700,700
+Appraisal Fee,450,450
+Credit Report,21,21
+Lenders Title Insurance,400,400
+Recording Charges,150,150
+=

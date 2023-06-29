@@ -1,0 +1,8 @@
+<BUTTON ...>
+ACCESSKEY,Shortcut key for this button
+DISABLED,Disable this button
+NAME,Name of this button element
+onClick,Script to run when the user clicks here
+TABINDEX,Tab order
+TYPE="BUTTON/SUBMIT/RESET",What type of button is this
+VALUE,Value sent with the form

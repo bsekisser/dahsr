@@ -1,0 +1,20 @@
+<EMBED ...>
+SRC,URL of resource to be embedded
+WIDTH,Width of area in which to show resource
+HEIGHT,Height of area in which to show resource
+ALIGN="ABSBOTTOM/ABSMIDDLE/MIDDLE/TEXTTOP/RIGHT/LEFT/BASELINE/CENTER/BOTTOM/TOP",How text should flow around the picture
+NAME,Name of the embedded object
+PLUGINSPAGE,Where to get the plugin software
+PLUGINURL,Where to get the JAR archive for automatic installation
+HIDDEN="FALSE/TRUE",If the object is visible or not
+HREF,Make this object a link
+TARGET,Frame to link to
+AUTOSTART="TRUE/FALSE",If the sound/movie should start automatically
+LOOP="TRUE/FALSE/#n (of Loops)",How many times to play the sound/movie
+PLAYCOUNT,How many times to play the sound/movie
+VOLUME,How loud to play the sound
+CONTROLS="VOLUMELEVER/STOPBUTTON/PAUSEBUTTON/PLAYBUTTON/SMALLCONSOLE/CONSOLE",Which sound control to display
+CONTROLLER="TRUE/FALSE",If controls should be displayed
+MASTERSOUND,Indicates the object in a sound group with the sound to use
+STARTTIME,How far into the sound to start and stop
+ENDTIME,When to finish playing

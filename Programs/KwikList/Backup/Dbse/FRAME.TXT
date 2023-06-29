@@ -1,0 +1,9 @@
+<FRAME ...>
+SRC: what file to put in the frame
+NAME: the name of the frame
+SCROLLING = YES | NO | AUTO should the frame have a scrollbar?
+NORESIZE: don't let the user make the frame bigger or smaller
+FRAMEBORDER = YES | 1 | NO | 0 should this frame have a border?
+BORDERCOLOR: color of the surrounding border
+MARGINWIDTH: the internal left and right margins for the frame
+MARGINHEIGHT: the internal top and bottom margins for the frame

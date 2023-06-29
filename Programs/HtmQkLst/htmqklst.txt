@@ -1,0 +1,496 @@
+<!-- "Comment Out" -->
+=
+<!DOCTYPE ...>   
+=
+<A ...> "Anchor"
+	HREF: URL you are linking to.
+	NAME: name a section of the page.
+	TARGET = "_blank" | "_parent" | "_self" | "_top" | window name which window the document should go in.
+	TITLE: suggested title for the document to be opened.
+	onClick: script to run when the user clicks on this anchor.
+	onMouseOver: when the mouse is over the link.
+	onMouseOut: when the mouse is no longer over the link.
+	ACCESSKEY  
+=
+<ADDRESS>   
+=
+<APP ...>   
+=
+<APPLET ...>
+	CODE: the applet to run  
+	CODEBASE: path to the applet class  
+	WIDTH: width of the applet  
+	HEIGHT: height of the applet  
+	ALIGN = LEFT | RIGHT | TOP | MIDDLE | BOTTOM | BASELINE
+	alignment of applet to surrounding text  
+	VSPACE: vertical space between applet and surrounding text  
+	HSPACE: horizontal space between applet and surrounding text  
+	BORDER: empty space surrounding the applet  
+	NAME: name of applet for reference by other applets  
+	ARCHIVE: a compressed collection of applet components  
+	MAYSCRIPT: If Java can use JavaScript  
+=
+<AREA ...>
+	HREF: URL you are linking to  
+	ALT: alternate text if the image isn't displayed  
+	SHAPE = RECT | CIRCLE | POLY | DEFAULT what shape is this area?  
+	COORDS: coordinates for the link area shape  
+	TITLE: Short description of the area  
+	TARGET: what frame to go to  
+	NOHREF: this area is not a link  
+	onClick: script action when the user clicks this area  
+	onMouseOver
+	onMouseOut  
+=
+<B> Bold   
+=
+<BASE ...> "Base Address"
+	HREF: default address for hypertext links  
+	TARGET = "_blank" | "_parent" | "_self" | "_top" | frame name default window for linked documents  
+=
+<BASEFONT ...>
+	SIZE  
+	COLOR  
+	FACE  
+=
+<BGSOUND ...>
+	SRC: URL of the sound  
+	LOOP = INFINITE | number of loops how many times to play the sound  
+=
+<BIG>   
+=
+<BLINK>   
+=
+<BLOCKQUOTE ...> "Block Quote"
+=
+<BODY ...>
+	BGCOLOR: background color of the page  
+	BACKGROUND: background picture for the page  
+	TEXT: color of the text on the page  
+	LINK: color of links that haven't been followed yet  
+	VLINK: color of links that have been followed  
+	ALINK: color of links while you are clicking on them  
+	BGPROPERTIES = FIXED if the background image should not scroll  
+	TOPMARGIN: size of top and bottom margins  
+	LEFTMARGIN: size of left and right margins  
+	MARGINHEIGHT: size of top and bottom margins  
+	MARGINWIDTH: size of left and right margins  
+	onLoad: Script to run once the page is fully loaded  
+	onUnload  
+	onFocus  
+	onBlur  
+	STYLESRC: MS FrontPage extension  
+	SCROLL = YES | NO If the document should have a scroll bar  
+=
+<BR ...> "Line Break"
+	CLEAR = LEFT | RIGHT | ALL | BOTH /go past a picture or other object  
+=
+<BUTTON ...>
+	TYPE = BUTTON | SUBMIT | RESET /what type of button is this  
+	onClick: script to run when the user clicks here  
+	NAME: name of this button element  
+	VALUE: the value sent with the form  
+	DISABLED: disable this button  
+	ACCESSKEY: shortcut key for this button  
+	TABINDEX: tab order  
+=
+<CAPTION ...>
+	ALIGN = TOP | BOTTOM | LEFT | RIGHT alignment of caption to table  
+	VALIGN = TOP | BOTTOM if caption should be above or below table  
+=
+<CENTER ...>   
+=
+<CITE> "Citation"
+=
+<CODE>   
+=
+<COL ...>
+	SPAN: how many columns this affects  
+	ALIGN = LEFT | CENTER | RIGHT | JUSTIFY	/horizontal alignment  
+	WIDTH: width of the column  
+	BGCOLOR: background color of the column  
+=
+<COLGROUP ...> "Column Group"
+	SPAN: how many columns this affects  
+	ALIGN: alignment of cell contents  
+	WIDTH: Width of the column group  
+=
+<COMMENT>   
+=
+<DD> "Definition Description"
+=
+<DEL> "Deleted"
+=
+<DFN> "Definition"
+=
+<DIR ...> "Directory List"
+=
+<DIV ...> ALIGN = LEFT | CENTER | RIGHT | JUSTIFY /text alignment  
+=
+<DL ...> "Definition List"
+	COMPACT: take up less space  
+=
+<DT> "Definition Term"
+=
+<EM> "Emphasis"
+=
+<EMBED ...>
+	SRC: URL of resource to be embedded  
+	WIDTH: width of area in which to show resource  
+	HEIGHT: height of area in which to show resource  
+	ALIGN = ABSBOTTOM | ABSMIDDLE | MIDDLE | TEXTTOP | RIGHT | LEFT | BASELINE | CENTER | BOTTOM | TOP /how text should flow around the picture  
+	NAME: name of the embedded object  
+	PLUGINSPAGE: where to get the plugin software  
+	PLUGINURL: where to get the JAR archive for automatic installation  
+	HIDDEN = FALSE | TRUE if the object is visible or not  
+	HREF: make this object a link  
+	TARGET: frame to link to  
+	AUTOSTART = TRUE | FALSE if the sound/movie should start automatically  
+	LOOP = TRUE | FALSE | # of loops how many times to play the sound/movie  
+	PLAYCOUNT: how many times to play the sound/movie  
+	VOLUME: how loud to play the sound  
+	CONTROLS = VOLUMELEVER | STOPBUTTON | PAUSEBUTTON | PLAYBUTTON | SMALLCONSOLE | CONSOLE /Which sound control to display
+	CONTROLLER = TRUE | FALSE if controls should be displayed  
+	MASTERSOUND: indicates the object in a sound group with the sound to use  
+	STARTTIME: how far into the sound to start and stop  
+	ENDTIME: when to finish playing  
+=
+<FIELDSET>   
+=
+<FONT ...>
+	SIZE: size of the font  
+	COLOR: color of the text  
+	FACE: set the typestyle for text  
+	POINT-SIZE  
+	WEIGHT  
+=
+<FORM ...>
+	ACTION: URL of the CGI program  
+	METHOD = GET | POST how to transfer the data to the CGI  
+	NAME: name of this form  
+	ENCTYPE = "multipart/form-data" | "application/x-www-form-urlencoded" | "text/plain" /what type of form this is  
+	TARGET = "_blank" | "_parent" | "_self" | "_top" | frame name /what frames to put the results in  
+	onSubmit: script to run before the form is submitted  
+	onReset: script to run before the form is reset  
+=
+<FRAME ...>
+	SRC: what file to put in the frame  
+	NAME: the name of the frame  
+	SCROLLING = YES | NO | AUTO should the frame have a scrollbar?  
+	NORESIZE: don't let the user make the frame bigger or smaller  
+	FRAMEBORDER = YES | 1 | NO | 0 should this frame have a border?  
+	BORDERCOLOR: color of the surrounding border  
+	MARGINWIDTH: the internal left and right margins for the frame  
+	MARGINHEIGHT: the internal top and bottom margins for the frame  
+=
+<FRAMESET ...>
+	COLS: how many cols in the frameset  
+	ROWS: how many rows in the frameset  
+	FRAMEBORDER = YES | 1 | NO | 0 if the frames should have borders  
+	FRAMESPACING: space between the frames  
+	BORDER: space between frames  
+	BORDERCOLOR: color of frame borders  
+=
+<H#> "Headers",
+	ie. <H1 ...>, <H2 ...>, <H3 ...>, <H4 ...>, <H5 ...>, <H6 ...>
+	ALIGN = LEFT | RIGHT | CENTER | JUSTIFY /alignment  
+=
+<HEAD>   
+=
+<HR ...> "Horizontal Rule"
+	NOSHADE: don't use shadow effect  
+	SIZE: height  
+	WIDTH: horizontal width of the line  
+	ALIGN = LEFT | RIGHT | CENTER horizontal alignment of the line
+	COLOR: color of the line  
+=
+<HTML>   
+=
+<HTMLPLUS ...>   
+=
+<HYPE>   
+=
+<I> "Italics"
+=
+<IFRAME ...> "Inline Frame"
+	SRC: URL of the document to go in the frame  
+	HEIGHT: height of the inline frame  
+	WIDTH: width of the inline frame  
+	NAME: name of this inline frame  
+	LONGDESC: URL of a long description of the contents of the frame  
+	FRAMEBORDER = 1 | 0 /if the frame should have a border around it  
+	MARGINWIDTH: internal left/right margin for the frame  
+	MARGINHEIGHT: internal top/bottom margin for the frame  
+	SCROLLING = YES | NO | AUTO /if the frame should have scroll bars  
+	ALIGN = LEFT | RIGHT | TOP | TEXTTOP | MIDDLE | ABSMIDDLE | CENTER | BOTTOM | ABSBOTTOM | BASELINE /alignment of the frame object to text around it  
+	VSPACE: space above and below the frame  
+	HSPACE: space to the left and right of the frame  
+=
+<IMG ...> "Image:
+	SRC: where to get the picture  
+	ALT: text to show if you don't show the picture  
+	NAME
+	LONGDESC: URL of a long description of the image  
+	WIDTH: how wide is the picture  
+	HEIGHT: how tall is the picture  
+	ALIGN = LEFT | RIGHT | TOP | TEXTTOP | MIDDLE | ABSMIDDLE | BOTTOM | ABSBOTTOM | BASELINE how text should flow around the picture  
+	BORDER: border around the picture  
+	HSPACE: horizontal distance between the picture and the text  
+	VSPACE: vertical distance between the picture and the text  
+	ISMAP: is this a clickable map?  
+	USEMAP: name of the map definition  
+	LOWSRC: a version of the picture that isn't such a big file  
+	NATURALSIZEFLAG: meaningless  
+	NOSAVE: meaningless  
+	DYNSRC: play a movie file  
+	CONTROLS: show the buttons which control the movie  
+	LOOP = INFINITE | -1 | # of loops how many times to loop the movie  
+	START = FILEOPEN | MOUSEOVER when to start playing the movie  
+	onLoad: script to runs after the image is downloaded  
+	SUPPRESS = TRUE | FALSE Don't show icons of images that haven't downloaded yet  
+=
+<INPUT ...>
+	TYPE = TEXT | CHECKBOX | RADIO | PASSWORD | HIDDEN | SUBMIT | RESET | BUTTON | FILE | IMAGE /what type of field  
+	NAME: name of this form field  
+	VALUE: initial or only value of this field  
+	SIZE: how wide the text field should be  
+	MAXLENGTH: maximum number of characters  
+	CHECKED: check this checkbox or radio button  
+	BORDER: border around image  
+	SRC: URL of image  
+	ALT: text to show if you don't show the picture  
+	LOWSRC: a version of the picture that isn't such a big file  
+	WIDTH: width of image  
+	HEIGHT: height of image  
+	ALIGN = LEFT | RIGHT | TOP | TEXTTOP | MIDDLE | ABSMIDDLE | CENTER | BOTTOM | ABSBOTTOM | BASELINE /how text should flow around the picture  
+	VSPACE: vertical distance between the picture and the text  
+	HSPACE: horizontal distance between the picture and the text  
+	READONLY: the value of this field cannot be changed  
+	DISABLED: don't let the user do anything with this field  
+	ACCESSKEY  
+	TABINDEX: tab order  
+	LANGUAGE = "JavaScript" | "JavaScript1.1" | "JSCRIPT" | "VBScript" | "VBS" | ... /other language scripting language to use  
+	onClick: when the user clicks here  
+	onChange: when this field is changed  
+	onFocus: when this field gets the focus  
+	onBlur: when this field loses the focus  
+	onKeyPress: script to run when a key is pressed  
+	onKeyUp: script for when a key goes up while the field has the focus  
+	onKeyDown: script for when a key goes down while the field has the focus  
+	AUTOCOMPLETE = ON | OFF /If the browser should use autocompletion for the field  
+=
+<INS> "Inserted"
+=
+<DEL>   
+=
+<ISINDEX ...>
+	PROMPT: prompt string to show before the text entry area  
+	ACTION: the CGI to call  
+=
+<KBD> "Keyboard"
+=
+<LABEL ...>
+	FOR: form element for which this is a label  
+=
+<LEGEND ...> ALIGN = RIGHT | CENTER | LEFT  
+=
+<LI ...> "List Item"
+	TYPE = DISC | CIRCLE | SQUARE | 1 | A | a | I | i /type of bullet or numeral  
+	VALUE: where to continue counting  
+=
+<LINK ...>
+	REL: relationship to this page  
+	REV: reverse relationship to this page  
+	HREF: URL of related document  
+	TITLE: suggested title  
+	MEDIA = SCREEN | PRINT | PROJECTION | AURAL | BRAILLE | ALL | other media What media type the link applies to  
+	TYPE: MIME type of linked resource  
+=
+<LISTING>   
+=
+<MAP ...>
+	NAME: name of this map  
+=
+<MARQUEE ...>
+	WIDTH: how wide the marquee is  
+	HEIGHT: how tall the marquee is  
+	DIRECTION = LEFT | RIGHT which direction the marquee should scroll  
+	BEHAVIOR = SCROLL | SLIDE | ALTERNATE what type of scrolling  
+	SCROLLDELAY: how long to delay between each jump  
+	SCROLLAMOUNT: how far to jump  
+	LOOP = INFINITE | number of loops how many times to loop  
+	BGCOLOR: background color  
+	HSPACE: horizontal space around the marquee  
+	VSPACE: vertical space around the marquee  
+=
+<MENU ...>   
+=
+<META ...>
+	NAME = KEYWORDS | DESCRIPTION | REFRESH | ...many others /The pupose of this META tag  
+	HTTP-EQUIV: Name of the pretend HTTP header  
+	CONTENT: Metainformation content  
+=
+<MULTICOL ...>
+	COLS: how many columns  
+	GUTTER: space between columns  
+	WIDTH: width of a single column  
+=
+<NOBR> "No Break"
+=
+<NOEMBED>   
+=
+<NOFRAMES>   
+=
+<NOSCRIPT>   
+=
+<OL ...> "Ordered List"
+	TYPE = 1(Numbers) | A(Upper case letters) | a(lower case letters) | I(Roman numerals) | i(Italics) /type of display
+	START: where to start counting  
+=
+<OPTION ...>
+	VALUE: what's the value if this option is chosen  
+	SELECTED: this option is selected by default  
+=
+<P ...>	"Paragraph"
+	ALIGN = LEFT | CENTER | RIGHT | JUSTIFY alignment of text within the paragraph  
+	CLEAR = LEFT | RIGHT | ALL | BOTH move past picture and other objects  
+=
+<PARAM ...> "Parameter"
+	NAME: name of the parameter  
+	VALUE: value of the parameter  
+=
+<PLAINTEXT>   
+=
+<PRE ...> "Preformatted Text"
+=
+<S> "Strikeout"
+=
+<SAMP> "Sample"
+=
+<SCRIPT ...>
+	TYPE = "text/javascript" | "text/vbscript" | other scripting language Which scripting language to use  
+	SRC: External source for script  
+	DEFER: Continue loading page while downloading script  
+	LANGUAGE = JAVASCRIPT | LIVESCRIPT | VBSCRIPT | other Deprecated indicator of language  
+	FOR: object for which this script is an event handler  
+	EVENT: the event this script handles  
+=
+<SELECT ...>
+	NAME: name of this form element  
+	MULTIPLE: allow more than one choice  
+	SIZE: how many options to show  
+	READONLY: don't let the user change the value of this field  
+	DISABLED: don't let the user do anything with this field  
+	LANGUAGE = "JavaScript" | "JavaScript1.1" | "VBScript" | other language scripting language to use  
+	onChange: what to do when a new option is selected  
+=
+TABINDEX: "Tab order"
+	onFocus: script to run when this field gets the focus  
+	onBlur: script to run when this field loses the focus  
+=
+<SMALL>   
+=
+<SOUND ...>   
+=
+<SPACER ...>
+	TYPE = HORIZONTAL | VERTICAL | BLOCK what type of space is this  
+	ALIGN = LEFT | RIGHT align left or right  
+	SIZE: how tall or wide  
+	WIDTH: how wide  
+	HEIGHT: how tall  
+=
+<SPAN ...>   
+=
+<STRIKE> "Strikeout"
+=
+<STRONG>   
+=
+<STYLE ...>
+	TYPE: style language  
+	MEDIA: type of media this syle applies to  
+=
+<SUB> "Subscript"
+=
+<SUP> "Superscript"
+=
+<TABLE ...>
+	BORDER: size of border around the table  
+	CELLPADDING: space between the edge of a cell and the contents  
+	CELLSPACING: space between cells  
+	WIDTH: width of the table as a whole  
+	BGCOLOR: color of the background  
+	BACKGROUND: picture to use as background  
+	ALIGN = LEFT | RIGHT alignment of table to surrounding text  
+	HSPACE: horizontal space between table and surrounding text  
+	VSPACE: vertical space between table and surrounding text  
+	HEIGHT: height of the table as a whole  
+	FRAME = VOID | BOX | BORDER | ABOVE | BELOW | LHS | RHS | HSIDES | VSIDES parts of outside border that are visible  
+	RULES = NONE | ALL | COLS | ROWS | GROUPS if there should be internal borders  
+	BORDERCOLOR: color of border around the table  
+	BORDERCOLORLIGHT: color of "light" part of border around the table  
+	BORDERCOLORDARK: color of "dark" part of border around the table  
+	SUMMARY: Summary of the purpose of the table  
+=
+<TBODY ...> "Table Body Section"
+=
+<TD ...> "Table Data"
+	ALIGN = LEFT | CENTER | MIDDLE | RIGHT /horizontal alignment of cell contents  
+	VALIGN = TOP | MIDDLE | CENTER | BOTTOM | BASELINE /vertical alignment of cell contents  
+	WIDTH: width of cell  
+	HEIGHT: height of cell  
+	COLSPAN: number of columns to cover  
+	ROWSPAN: number of rows to cover  
+	NOWRAP: don't word wrap  
+	BGCOLOR: color of the background  
+	BORDERCOLOR: color of border around the table  
+	BORDERCOLORDARK: color of "dark" part of border around the table  
+	BORDERCOLORLIGHT: color of "light" part of border around the table  
+	BACKGROUND: picture to use as background  
+=
+<TEXTAREA ...>
+	NAME: name of this form field  
+	COLS: how many characters wide  
+	ROWS: how many rows  
+	WRAP = SOFT | HARD | OFF how to wrap the text  
+	READONLY: don't let the user change the contents of the field  
+	DISABLED: don't let the user do anything with this field  
+	TABINDEX: tab order  
+	LANGUAGE = "JavaScript" | "JavaScript1.1" | "VBScript" | other language scripting language  
+	onChange: Script to run when the user has changed the textarea  
+	onKeyPress: script to run when a key is pressed  
+=
+<TFOOT ...> "Table Footer Section"
+=
+<TH ...> "Table Header"
+=
+<THEAD ...> "Table Header Section"
+=
+<TBODY ...> "Table Body Section"
+=
+<TFOOT ...> "Table Footer Section"
+=
+<TITLE>   
+=
+<TR ...> "Table Row"
+	ALIGN = LEFT | CENTER | RIGHT /horizontal alignment of cell contents  
+	HALIGN = LEFT | CENTER | RIGHT  
+	VALIGN = TOP | MIDDLE | BOTTOM | BASELINE /vertical alignment of cell contents  
+	BGCOLOR: background color  
+	BACKGROUND: background image  
+	BORDERCOLOR: color of border around each cell  
+	BORDERCOLORLIGHT: color of "light" part of border around each cell  
+	BORDERCOLORDARK: color of "dark" part of border around each cell  
+=
+<TT> "Teletype"
+=
+<U> "Underline"
+=
+<UL ...> "Unordered List"
+	TYPE = DISC | CIRCLE | SQUARE /type of bullets  
+=
+<VAR> "Variable"
+=
+<WBR>   
+=
+<XMP>   
+=

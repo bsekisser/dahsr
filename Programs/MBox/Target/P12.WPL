@@ -1,0 +1,10 @@
+<smil>
+<head><title>Media Box</title></head>
+<body>
+<seq>
+<media src="c:\media\audios\Commentary,Jonathan Cahn Reads Part of David Wilkerson&apos;s Prediction.mp3"/>
+<media src="c:\media\audios\Commentary,Judge Jeanine Ferris Pirro,Obama&apos;s Immigration Bill.mp3"/>
+<media src="c:\media\audios\Commentary,So God Made a Farmer by Paul Harvey.wav"/>
+</seq>
+</body>
+</smil>

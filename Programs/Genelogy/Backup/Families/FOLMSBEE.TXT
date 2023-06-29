@@ -1,0 +1,84 @@
+[F],Folmsbee
+[G]
+[D],Progenitor,Arthur Folmsbee (South Valley N. Y.),b-,d-,m-
+[S],Clara Somers (South Valley N. Y.),b-,d-,p-
+[C],PH,Hartley*,b-2 Aug 1897,d-16 Sep 1972
+[C],PS,Stanley*,b-,d-
+[N],*Hartley was given an "H" path prefix and Stanley was given an "S" path prefix 
+[N],instead of a number prefix because the writer didn't know who was the older of 
+[N],the two nor was the writer aware or sure of any other siblings.
+[E]
+[G],2
+[D],PH,Hartley Folmsbee,b-2 Aug 1897,d-16 Sep 1972,m-
+[S],Violet Fry (First Wife),b-27 Feb 1901,d-,p-Ernest & Louise Barret (England)
+[C],PH1,Sydney Drexel,b-28 Oct 1920,d-7 Feb 1995
+[C],PH2,Hilda,b-,d-
+[E]
+[D],PH,Hartley Folmsbee,b-2 Aug 1897,d-16 Sep 1972,m-19??
+[S],Prudie (Second Wife),b-,d-,p-
+[X]
+[E]
+[G],3
+[D],PH1,Sydney Drexel Folmsbee,b-28 Oct 1920,d-7 Feb 1995,m-
+[S],Mildred Leary,b-30 Apr 1919,d-11 Dec 1998,p-
+[C],PH11,Kathryn Winifred,b-10 Feb 1945,d-
+[C],PH12,Helen Louise,b-15 Aug 1946,d-
+[C],PH13,Richard Allen,b-1950,d-9 June 2009
+[E]
+[D],PH2,Hilda Folmsbee,b-,d-1996,m-
+[S],John Bail,b-,d-,p-
+[X]
+[E]
+[G],4
+[D],PH11,Kathryn Winifred Folmsbee,b-10 Feb 1945,d-,m-8 Nov 1969
+[S],Douglas Arthur Hughes,b-15 May 1944,d-,p-William Zimmer Sr. &amp; Anne (Anna) May Henshaw
+[C],PH111,Douglas Arthur Jr.,b-22 Jan 1971,d-
+[C],PH112,Michael Girard,b-21 Feb 1977,d-
+[E]
+[D],PH12,Helen Louise Folmsbee,b-15 Aug 1946,d-,m-
+[S],Brian Lowell Stearne (First Husband),b-,d-2000,p-
+[C],PH121,Sharon Lynne,b-10 May 1967,d-
+[C],PH122,Brian Lowell Jr.,b-30 Sep 1968,d-
+[C],PH123,Victoria Lee,b-2 Nov 1971,d-
+[E]
+[D],PH12,Helen Louise Folmsbee,b-15 Aug 1946,d-,m-15 Oct 1977
+[S],Wayne Thomas Kelly (Second Husband),b-16 May 1954,d-31 Oct 2006,p-
+[X]
+[E]
+[D],PH12,Helen Louise Folmsbee,b-15 Aug 1946,d-,m-16 Aug 2008
+[S],Thomas Engelhardt (Third Husband),b-,d-,p-
+[X]
+[E]
+[D],PH13,Richard Allen Folmsbee,b-14 Jun 1950,d-9 Jun 2009,m-7 Nov 1970
+[S],Judi K. Malloy,b-,d-,p-
+[C],PH131,Tanya,b-,d-
+[C],PH132,Heath Aaron,b-,d-
+[E]
+[G],5
+[D],PH121,Sharon Lynne Stearne,b-10 May 1967,d-,m-30 Mar 2001
+[S],Donald Norwood (Second Husband),b-25 Feb 1959,d-,p-
+[X]
+[E]
+[D],PH121,Sharon Lynne Stearne,b-10 May 1967,d-,m-
+[S],John Korkes (Third Husband),b-,d-,p-
+[E]
+[D],PH122,Brian Lowell Stearne Jr.,b-30 Sep 1968,d-,m-30 Sep 2000
+[S],Autumn Frazee*,b-30 Sep 1969,d-,p-
+[C],PH1221,Kyle Foster,b-5 Mar 2001,d-
+[N],*Children from previous marriage:
+[N],*Ariel Kathleen Moody,b-18 Jul 1991
+[N],*Trevor Lee Moody,b-16 Mar 1995
+[E]
+[D],PH123,Victoria Lee Stearne,b-2 Nov 1971,d-,m-17 Sep 1994
+[S],James Christopher Hines,b-24 Dec 1969,d-,p-Yancy &amp; Nancy
+[C],PH1231,Allison Mahala,b-17 May 1999,d-
+[C],PH1232,Samantha Clay,b-30 Mar 2001,d-
+[C],PH1233,Coleman,b-2005,d-
+[E]
+[D],PH131,Tanya Folmsbee,b-,d-,m-
+[S],(First Husband),b-,d-,p-
+[C],PH1311,Ryan,b-,d-
+[E]
+[D],PH132,Heath Aaron Folmsbee,b-,d-,m-27 Jun 2004
+[S],Chelsea R. Alverson,b-,d-,p-Chuck & Debbie
+[E]

@@ -1,0 +1,11 @@
+<TEXTAREA ...>
+COLS: how many characters wide
+DISABLED: don't let the user do anything with this field
+LANGUAGE = "JavaScript" | "JavaScript1.1" | "VBScript" | other language scripting language
+NAME: name of this form field
+onChange: Script to run when the user has changed the textarea
+onKeyPress: script to run when a key is pressed
+READONLY: don't let the user change the contents of the field
+ROWS: how many rows
+TABINDEX: tab order
+WRAP = SOFT | HARD | OFF how to wrap the text

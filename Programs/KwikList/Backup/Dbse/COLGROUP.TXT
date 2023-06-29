@@ -1,0 +1,4 @@
+<COLGROUP ...> "Column Group"
+SPAN,How many columns this affects
+ALIGN,Alignment of cell contents
+WIDTH,Width of the column group

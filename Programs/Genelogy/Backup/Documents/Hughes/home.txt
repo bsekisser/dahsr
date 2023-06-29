@@ -1,0 +1,22 @@
+<title>Home
+
+<tr><td align="center" id="txt3" width="100%">
+
+<a id="txt1">The Hughes Genealogy</a><br><br>
+<a id="txt2">A FYNNO DUW, DEIFYDD</a><br><br>
+
+<a id="txt3">The Descendants of</a><br>
+<a href="r1.htm" id="txt2">Matthias Hughes</a><br>
+<a id="txt3">1636-1703</a><br><br>
+
+<a id="txt3">Dedicated to</a><br>
+<a id="txt2">Joseph Lee Hughes</a><br><br>
+
+<a id="txt3">Transcribed by</a><br>
+<a id="txt2">Renna Craig Ambrose</a><br>
+
+<a id="txt3">as composed by<br>
+<a id="txt2">Cecilia Earle</a><br>
+<a id="txt2">1975</a>
+
+</td></tr>

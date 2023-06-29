@@ -1,0 +1,8 @@
+1861AD,Civil War Began
+1865AD,Civil War Ended
+1939AD,Sep 1,Hitler Invades Poland,WW2 Began
+1941AD,Dec 7,Pearl Harbor Attacked,Dec 8,US Declares War with Japan
+1944AD,May 15,Doug Sr. Born,June 5,DDay
+1945AD,Feb 10,Kathryn Born,WW2 Ends
+1971AD,Jan 22,Doug Jr. Born
+1977AD,Feb 21,Michael Born

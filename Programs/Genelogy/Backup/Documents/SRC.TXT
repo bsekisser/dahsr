@@ -1,0 +1,15 @@
+
+ Volume in drive C is Main       
+ Volume Serial Number is 2C4B-5FF9
+ Directory of C:\DAHSR\QBASIC\PROGRAMS\ANCIENTS\GENELOGY\BYTABLES\BACKUP\DOCUME~1
+
+.            <DIR>     12/16/15  11:24a
+..           <DIR>     12/16/15  11:24a
+ADAMNEVE DOC       776 01/29/14  12:49p
+HALL     DOC     59547 11/03/10   9:58p
+HUGHES       <DIR>     12/07/15   3:06p
+HUGHES   DOC     86664 01/18/14   1:05p
+MYFILES  BFR         0 12/16/15  11:13a
+SRC      TXT         0 12/16/15  11:24a
+        8 file(s)     146987 bytes
+                   492686848 bytes free

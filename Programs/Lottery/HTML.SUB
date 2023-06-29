@@ -1,0 +1,330 @@
+DECLARE SUB FormatLine (i$)
+DECLARE SUB MsgBox (i$)
+DECLARE SUB Purge ()
+DECLARE SUB Initialize ()
+DECLARE SUB Header (n%)
+DECLARE SUB Table (n%, a$, b$, p$, s$, w$)
+DECLARE SUB Td (n%, a$, c$, s$, o$, i$)
+DECLARE SUB Footer (n%)
+DECLARE SUB SayIt (i$, v%, f%, b%)
+DECLARE SUB Main ()
+    CONST BOOT = "lottery.bas", WSZ = 20
+    COMMON SHARED Ln$, Ty$, Px$, Lo$, Hi$, Bp$, Bl$, Bh$
+    COMMON SHARED Bgc%
+    COMMON SHARED Fgc%
+    COMMON SHARED Flt%
+    COMMON SHARED Fwd$
+    COMMON SHARED Hdr$
+    COMMON SHARED Logo$
+    COMMON SHARED Mxg$
+    COMMON SHARED q$
+    COMMON SHARED Title$
+    COMMON SHARED Today$
+    DIM SHARED Mth(12) AS STRING
+    ON ERROR GOTO Trap
+    Initialize
+    Main
+    RUN BOOT
+END
+Trap: Flt% = ERR: RESUME NEXT
+DATA "Jan","Feb","Mar","Apr","May","Jun"
+DATA "Jul","Aug","Sep","Oct","Nov","Dec"
+
+SUB Footer (n%)
+    PRINT #n%, ""
+    PRINT #n%, "</td></table>"
+    PRINT #n%, "</body>"
+    PRINT #n%, "</html>"
+END SUB
+
+SUB FormatLine (i$)
+    DIM l$, x%
+    FOR x% = 1 TO LEN(i$)
+    SELECT CASE ASC(MID$(i$, x%, 1))
+        CASE 196: l$ = l$ + "-"
+        CASE 180, 182, 186, 195, 199: l$ = l$ + "|"
+        CASE 187, 188, 200, 201, 205: l$ = l$ + "="
+        CASE 32 TO 126: l$ = l$ + MID$(i$, x%, 1)
+    END SELECT
+    NEXT
+    i$ = l$
+END SUB
+
+SUB Header (n%)
+    PRINT #n%, "<html>"
+    PRINT #n%, "<head>"
+    PRINT #n%, "<title>"; Title$; "</title>"
+    PRINT #n%, "<style type="; q$; "text/css"; q$; ">"
+    PRINT #n%, "A:link, A:visited, A:active, A:hover"
+    PRINT #n%, "    {text-decoration:none; font-style:normal; font-weight:bold;}"
+    PRINT #n%, "A:link, A:visited, A:active {color:#336633;}"
+    PRINT #n%, "A:hover {color:#ffffff; background:#336633;}"
+    PRINT #n%, "A:link, A:visited, A:active, A:hover, .mhdr, .shdr, .mtxt, .stxt, .text, .rtxt, .bold, .ital, .url"
+    PRINT #n%, "    {font-family:times new roman;}"
+    PRINT #n%, ".stxt, .text, .rtxt, .bold  {font-size:18;}"
+    PRINT #n%, ".mhdr   {color:#ffffff; background:#336633; font-style:normal; font-weight:bold; font-size:30;}"
+    PRINT #n%, ".shdr   {color:#ffffff; background:#336633; font-style:normal; font-weight:bold; font-size:16;}"
+    PRINT #n%, ".mtxt   {color:#000000; background:#dddddd; font-style:normal; font-weight:bold; font-size:20;}"
+    PRINT #n%, ".stxt   {color:#336633; font-style:normal; font-weight:bold;}"
+    PRINT #n%, ".text   {color:#000000; font-style:normal; font-weight:normal;}"
+    PRINT #n%, ".rtxt   {color:#ff0000; font-style:normal; font-weight:bold;}"
+    PRINT #n%, ".bold   {color:#000000; font-style:normal; font-weight:bold;}"
+    PRINT #n%, ".ital   {color:#ffffff; background:#000000; font-style:italic; font-weight:normal; font-size:12;}"
+    PRINT #n%, ".url   {color:#ffffff; background:#000000; font-style:normal; font-weight:normal; font-size:14;}"
+    PRINT #n%, ".link   {color:#336633; font-style:normal; font-weight:bold; font-size:16;}"
+    PRINT #n%, "TABLE, TD {background:#ffff00;}"
+    PRINT #n%, "</style>"
+    PRINT #n%, "</head>"
+    PRINT #n%, "<body bgcolor="; q$; "#336633"; q$; ">"
+    Table n%, "", "3", "", "", "90"
+    PRINT #n%, "<td>"
+    PRINT #n%, ""
+    Table n%, "", "", "3", "", ""
+    IF n% = 2 THEN
+        Td n%, "", "mhdr", "", "", "Lottery Menu"
+        Td n%, "", "shdr", "", "<>", Logo$
+    ELSE
+        Td n%, "", "mhdr", "", "", Ln$ + " Statistics"
+    END IF
+    PRINT #n%, "</table>"
+    PRINT #n%, ""
+END SUB
+
+SUB Initialize
+    DIM i$, x%
+    SELECT CASE UCASE$(RIGHT$(BOOT, 4))
+        CASE ".EXE": Fwd$ = ".mod"
+        CASE ELSE: Fwd$ = ".sub"
+    END SELECT
+    Bgc% = 1
+    Fgc% = 15
+    Logo$ = "Don't Bet The House!"
+    q$ = CHR$(34)
+    Title$ = "Lottery Game Number Statistics"
+    FOR x% = 1 TO 12: READ Mth(x%): NEXT
+    Today$ = MID$(DATE$, 4, 2) + " " + Mth$(VAL(LEFT$(DATE$, 2))) + " " + RIGHT$(DATE$, 4)
+    Url$ = "dahsr@yahoo.com"
+    Flt% = 0
+    CLOSE : OPEN "lottery.ini" FOR INPUT AS #1
+    IF Flt% = 0 THEN
+        WHILE NOT EOF(1)
+        LINE INPUT #1, i$
+        FOR x% = 1 TO LEN(i$)
+        IF x% < LEN(i$) THEN
+            SELECT CASE UCASE$(LEFT$(i$, x%))
+                CASE "LOGO=": Logo$ = MID$(i$, x% + 1): EXIT FOR
+                CASE "E:MAIL=", "EMAIL=", "URL=", "WWW=": Url$ = MID$(i$, x% + 1): EXIT FOR
+            END SELECT
+        END IF
+        NEXT
+        WEND
+    ELSE
+        Flt% = 0
+    END IF
+    CLOSE
+    OPEN "games.txt" FOR INPUT AS #1
+    WHILE NOT EOF(1)
+    LINE INPUT #1, i$
+    Mxg$ = MID$(STR$(VAL(Mxg$) + 1), 2)
+    WEND
+    CLOSE
+END SUB
+
+SUB Main
+    DIM f$, g$, i$
+    DIM c(8)
+    c(0) = 5
+    c(2) = 5: c(3) = c(2)
+    c(4) = 7: c(5) = c(4)
+    c(7) = 5: c(8) = c(7)
+    c(1) = 100 - c(0) - c(2) - c(3) - c(4) - c(5) - c(7) - c(8)
+    c(6) = c(1) * .25
+    c(1) = 100 - c(6)
+    MsgBox "Updating html Displays"
+    Purge
+    Flt% = 0
+    CLOSE
+    OPEN "games.txt" FOR INPUT AS #1
+    OPEN "html\lottery.htm" FOR OUTPUT AS #2
+    Header 2
+    Table 2, "", "1", "3", "", ""
+    Td 2, "", "mtxt", MID$(STR$(c(0)), 2), "<", "G" + STRING$(LEN(Mxg$), "#")
+    Td 2, "<", "mtxt", MID$(STR$(c(1)), 2), "", "Lottery Name"
+    Td 2, "", "mtxt", MID$(STR$(c(2)), 2), "", "Ty"
+    Td 2, "", "mtxt", MID$(STR$(c(3)), 2), "", "Px"
+    Td 2, "", "mtxt", MID$(STR$(c(4)), 2), "", "Lo"
+    Td 2, "", "mtxt", MID$(STR$(c(5)), 2), "", "Hi"
+    Td 2, "<", "mtxt", MID$(STR$(c(6)), 2), "", "Bonus"
+    Td 2, "", "mtxt", MID$(STR$(c(7)), 2), "", "Bl"
+    Td 2, "", "mtxt", MID$(STR$(c(8)), 2), ">", "Bh"
+    IF Flt% = 0 THEN
+        WHILE NOT EOF(1)
+        LINE INPUT #1, f$
+        Ln$ = "&nbsp;"
+        Ty$ = "&nbsp;"
+        Px$ = "&nbsp;"
+        Lo$ = "&nbsp;"
+        Hi$ = "&nbsp;"
+        Bp$ = "&nbsp;"
+        Bl$ = "&nbsp;"
+        Bh$ = "&nbsp;"
+        CLOSE #3: OPEN "dbse\" + f$ FOR INPUT AS #3
+        INPUT #3, Ln$, Ty$, Px$, Lo$, Hi$
+        IF VAL(Ty$) = 3 THEN INPUT #3, Bp$, Bl$, Bh$
+        g$ = MID$(STR$(VAL(g$) + 1), 2)
+        Td 2, "<", "stxt", MID$(STR$(c(0)), 2), "<", "G" + RIGHT$(STRING$(LEN(Mxg$), "0") + g$, LEN(Mxg$)) + "</a>"
+        Td 2, "<", "stxt", MID$(STR$(c(1)), 2), "", "<a href=" + q$ + "s" + g$ + ".htm" + q$ + ">" + Ln$ + "</a>"
+        Td 2, ">", "stxt", MID$(STR$(c(2)), 2), "", RIGHT$("0" + Ty$, 1)
+        Td 2, ">", "stxt", MID$(STR$(c(3)), 2), "", RIGHT$("0" + Px$, 1)
+        Td 2, ">", "stxt", MID$(STR$(c(4)), 2), "", RIGHT$("0000" + Lo$, LEN(Hi$))
+        Td 2, ">", "stxt", MID$(STR$(c(5)), 2), "", RIGHT$("0000" + Hi$, LEN(Hi$))
+        Td 2, "<", "stxt", MID$(STR$(c(6)), 2), "", Bp$
+        Td 2, ">", "stxt", MID$(STR$(c(7)), 2), "", RIGHT$("0000" + Bl$, LEN(Bh$))
+        Td 2, ">", "stxt", MID$(STR$(c(8)), 2), ">", RIGHT$("0000" + Bh$, LEN(Bh$))
+        CLOSE #4: OPEN "html\s" + g$ + ".htm" FOR OUTPUT AS #4
+        Header 4
+        Table 4, "", "", "3", "", ""
+        i$ = "<a href=" + q$ + "lottery.htm" + q$ + ">Return to Menu</a>&nbsp;"
+        IF VAL(g$) = 1 THEN
+            i$ = i$ + "~&nbsp;<a href=" + q$ + "s" + Mxg$ + ".htm" + q$ + ">Last Display</a>&nbsp;"
+        ELSE
+            i$ = i$ + "~&nbsp;<a href=" + q$ + "s" + MID$(STR$(VAL(g$) - 1), 2) + ".htm" + q$ + ">Previous Display</a>&nbsp;"
+        END IF
+        i$ = i$ + "~&nbsp;<a href=" + q$ + "h" + g$ + ".htm" + q$ + ">View History Display</a>&nbsp;"
+        IF VAL(g$) = VAL(Mxg$) THEN
+            i$ = i$ + "~&nbsp;<a href=" + q$ + "s1.htm" + q$ + ">First Display</a>&nbsp;"
+        ELSE
+            i$ = i$ + "~&nbsp;<a href=" + q$ + "s" + MID$(STR$(VAL(g$) + 1), 2) + ".htm" + q$ + ">Next Display</a>&nbsp;"
+        END IF
+        i$ = i$ + "~&nbsp;<a href=" + q$ + "lottery.htm" + q$ + ">Return to Menu</a>"
+        Td 4, "", "link", "", "<>", i$
+        Td 4, "", "", "", "<", ""
+        PRINT #4, "<pre align="; q$; "center"; q$; ">"
+        CLOSE #5: OPEN "text\s" + g$ + ".txt" FOR INPUT AS #5
+        WHILE NOT EOF(5)
+        LINE INPUT #5, i$
+        FormatLine i$
+        PRINT #4, i$
+        WEND
+        PRINT #4, "</pre></td></tr></table>"
+        Footer 4
+        CLOSE #4: OPEN "html\h" + g$ + ".htm" FOR OUTPUT AS #4
+        Header 4
+        Table 4, "", "", "3", "", ""
+        i$ = "<a href=" + q$ + "lottery.htm" + q$ + ">Return to Menu</a>&nbsp;"
+        IF VAL(g$) = 1 THEN
+            i$ = i$ + "~&nbsp;<a href=" + q$ + "h" + Mxg$ + ".htm" + q$ + ">Last Display</a>&nbsp;"
+        ELSE
+            i$ = i$ + "~&nbsp;<a href=" + q$ + "h" + MID$(STR$(VAL(g$) - 1), 2) + ".htm" + q$ + ">Previous Display</a>&nbsp;"
+        END IF
+        i$ = i$ + "~&nbsp;<a href=" + q$ + "s" + g$ + ".htm" + q$ + ">View Summary Display</a>&nbsp;"
+        IF VAL(g$) = VAL(Mxg$) THEN
+            i$ = i$ + "~&nbsp;<a href=" + q$ + "h1.htm" + q$ + ">First Display</a>&nbsp;"
+        ELSE
+            i$ = i$ + "~&nbsp;<a href=" + q$ + "h" + MID$(STR$(VAL(g$) + 1), 2) + ".htm" + q$ + ">Next Display</a>&nbsp;"
+        END IF
+        i$ = i$ + "~&nbsp;<a href=" + q$ + "lottery.htm" + q$ + ">Return to Menu</a>"
+        Td 4, "", "link", "", "<>", i$
+        Td 4, "", "", "", "<", ""
+        PRINT #4, "<pre align="; q$; "center"; q$; ">"
+        CLOSE #5: OPEN "text\h" + g$ + ".txt" FOR INPUT AS #5
+        WHILE NOT EOF(5)
+        LINE INPUT #5, i$
+        FormatLine i$
+        PRINT #4, i$
+        WEND
+        PRINT #4, "</pre></td></tr></table>"
+        Footer 4
+        WEND
+    END IF
+    PRINT #2, "</table>"
+    Footer 2
+    CLOSE
+END SUB
+
+SUB MsgBox (i$)
+    SayIt "É" + STRING$(78, 205) + "»", WSZ + 1, 15, 4
+    SayIt LEFT$("º" + STRING$(40 - (LEN(i$) / 2), 32) + i$ + STRING$(40, 32), 79) + "º", WSZ + 2, 15, 4
+    SayIt "È" + STRING$(78, 205) + "¼", WSZ + 3, 15, 4
+END SUB
+
+SUB Purge
+    DIM i$
+    SHELL "dir html > html.shl /B"
+    CLOSE : OPEN "html.shl" FOR INPUT AS #1
+    WHILE NOT EOF(1)
+    LINE INPUT #1, i$
+    SELECT CASE UCASE$(LEFT$(i$, 1))
+        CASE "0" TO "9", "A" TO "Z": KILL "html\" + i$
+    END SELECT
+    WEND
+    CLOSE
+END SUB
+
+SUB SayIt (i$, v%, f%, b%)
+    DIM l$, r$, w%
+    w% = 40
+    l$ = LEFT$(i$, LEN(i$) / 2)
+    r$ = MID$(i$, LEN(l$) + 1)
+    l$ = RIGHT$(STRING$(w%, 32) + l$, w%)
+    r$ = LEFT$(r$ + STRING$(w%, 32), w%)
+    LOCATE v%, 1
+    COLOR f%, b%
+    PRINT l$; r$
+    COLOR Fgc%, Bgc%
+END SUB
+
+SUB Start (f$)
+    Ln$ = "&nbsp;": Ty$ = "&nbsp;": Px$ = "&nbsp;": Lo$ = "&nbsp;": Hi$ = "&nbsp;": Bp$ = "&nbsp;": Bl$ = "&nbsp;": Bh$ = "&nbsp;"
+    Flt% = 0
+    CLOSE #3: OPEN "dbse\" + f$ FOR INPUT AS #3
+    IF Flt% = 0 THEN
+        INPUT #3, Ln$, Ty$, Px$, Lo$, Hi$
+        IF VAL(Ty$) > 2 THEN INPUT #3, Bp$, Bl$, Bh$
+    END IF
+END SUB
+
+SUB Table (n%, a$, b$, p$, s$, w$)
+    SELECT CASE a$
+        CASE "", "^", "c": a$ = "center"
+        CASE "<", "l": a$ = "left"
+        CASE ">", "r": a$ = "right"
+    END SELECT
+    IF b$ = "" THEN b$ = "0"
+    IF p$ = "" THEN p$ = "0"
+    IF s$ = "" THEN s$ = "0"
+    DO
+    IF RIGHT$(w$, 1) = "%" THEN
+        w$ = LEFT$(w$, LEN(w$) - 1)
+    ELSE
+        EXIT DO
+    END IF
+    LOOP UNTIL w$ = ""
+    IF w$ = "" THEN w$ = "100"
+    PRINT #n%, "<table";
+    PRINT #n%, " align="; q$; a$; q$;
+    PRINT #n%, " border="; q$; b$; q$;
+    PRINT #n%, " cellpadding="; q$; p$; q$;
+    PRINT #n%, " cellspacing="; q$; s$; q$;
+    PRINT #n%, " width="; q$; w$; "%"; q$; ">"
+END SUB
+
+SUB Td (n%, a$, c$, s$, o$, i$)
+    SELECT CASE a$
+        CASE "": a$ = "center"
+        CASE "<": a$ = "left"
+        CASE ">": a$ = "right"
+    END SELECT
+    IF c$ = "" THEN c$ = "text"
+    IF s$ = "" THEN s$ = "100"
+    IF LEFT$(o$, 1) = "<" THEN PRINT #n%, "<tr>"
+    PRINT #n%, "<td";
+    PRINT #n%, " align="; q$; a$; q$;
+    PRINT #n%, " class="; q$; c$; q$;
+    PRINT #n%, " colspan="; q$; s$; q$;
+    PRINT #n%, " valign="; q$; "top"; q$;
+    PRINT #n%, " width="; q$; s$; "%"; q$; ">"
+    IF LEN(i$) > 0 THEN PRINT #n%, i$; "</td>"
+    IF RIGHT$(o$, 1) = ">" THEN PRINT #n%, "</tr>"
+END SUB
+

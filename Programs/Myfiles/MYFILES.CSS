@@ -1,0 +1,75 @@
+A {color:#00f; text-decoration:none; font-size:16px;}
+A:hover {color:#fff; background:#00f;}
+BODY
+   {
+   background:#ddd;
+   font-family:georgia,"times new roman",trebuchet,serif;
+   font-type:normal;
+   }
+LI
+   {
+   indent:25px;
+   }
+#shell
+   {
+   background:#fff;
+   border:1px solid #000;
+   margin:20px auto;
+   width:900px;
+   }
+#lpane
+   {
+   float:left;
+   align:left;
+   padding:3px;
+   width:444px;
+   }
+#rpane
+   {
+   float:right;
+   align:left;
+   padding:3px;
+   width:444px;
+   }
+.mhdr
+   {
+   background:#00f;
+   color:#fff;
+   font-size:30px;
+   text-align:center;
+   }
+.shdr
+   {
+   background:#00f;
+   color:#fff;
+   font-size:18px;
+   text-align:center;
+   }
+.date
+   {
+   clear:both;
+   background:#000;
+   color:#fff;
+   font-size:14px;
+   text-align:center;
+   }
+.local
+   {
+   background:#eef;
+   color:#00f;
+   font-size:20px;
+   text-align:center;
+   }
+.remote
+   {
+   background:#eef;
+   color:#00f;
+   font-size:20px;
+   text-align:center;
+   }
+.text
+   {
+   color:#000;
+   font-size:16px;
+   text-align:left;
+   }

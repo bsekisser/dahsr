@@ -1,0 +1,1 @@
+<DIV ...> ALIGN = LEFT | CENTER | RIGHT | JUSTIFY /text alignment  

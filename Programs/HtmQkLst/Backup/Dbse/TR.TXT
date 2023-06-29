@@ -1,0 +1,9 @@
+<TR ...> "Table Row"
+ALIGN = LEFT | CENTER | RIGHT /horizontal alignment of cell contents
+HALIGN = LEFT | CENTER | RIGHT
+VALIGN = TOP | MIDDLE | BOTTOM | BASELINE /vertical alignment of cell contents
+BGCOLOR: background color
+BACKGROUND: background image
+BORDERCOLOR: color of border around each cell
+BORDERCOLORLIGHT: color of "light" part of border around each cell
+BORDERCOLORDARK: color of "dark" part of border around each cell

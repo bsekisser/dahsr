@@ -1,0 +1,3 @@
+<STYLE ...>
+MEDIA: type of media this syle applies to
+TYPE: style language

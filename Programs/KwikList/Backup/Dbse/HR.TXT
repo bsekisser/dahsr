@@ -1,0 +1,6 @@
+<HR ...> "Horizontal Rule"
+NOSHADE,Don't use shadow effect
+SIZE,Height
+WIDTH,Horizontal width of the line
+ALIGN = LEFT | RIGHT | CENTER,Horizontal alignment of the line.
+COLOR,Color of the line

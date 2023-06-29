@@ -1,0 +1,9 @@
+<smil>
+<head><title>Media Box</title></head>
+<body>
+<seq>
+<media src="c:\media\audios\The 70s,I am Woman,Helen Ready (in Concert 1975).mp3"/>
+<media src="c:\media\audios\The 70s,The Entertainer,Marvin Hamlish (from The Sting-1973).mp3"/>
+</seq>
+</body>
+</smil>

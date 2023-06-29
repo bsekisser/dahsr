@@ -1,0 +1,13 @@
+<TD ...> "Table Data"
+ALIGN = LEFT | CENTER | MIDDLE | RIGHT /horizontal alignment of cell contents
+BACKGROUND: picture to use as background
+BGCOLOR: color of the background
+BORDERCOLOR: color of border around the table
+BORDERCOLORDARK: color of "dark" part of border around the table
+BORDERCOLORLIGHT: color of "light" part of border around the table
+COLSPAN: number of columns to cover
+HEIGHT: height of cell
+NOWRAP: don't word wrap
+ROWSPAN: number of rows to cover
+VALIGN = TOP | MIDDLE | CENTER | BOTTOM | BASELINE /vertical alignment of cell contents
+WIDTH: width of cell

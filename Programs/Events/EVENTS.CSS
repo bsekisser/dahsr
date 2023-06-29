@@ -1,0 +1,49 @@
+BODY
+   {
+   font-family:georgia,"times new roman",tahoma,serif;
+   font-style:normal;
+   font-weight:bold;
+   }
+.mhdr
+   {
+   font-size:30px;
+   }
+.shdr
+   {
+   font-size:20px;
+   }
+.span
+   {
+   font-size:20px;
+   font-style:italic;
+   }
+.mhdr, .shdr, .span
+   {
+   background:#00f;
+   color:#fff;
+   padding:5px;
+   }
+.text
+   {
+   background:#fff;
+   color:#000;
+   }
+.rbkg
+   {
+   background:#f00;
+   color:#fff;
+   }
+.bbkg
+   {
+   background:#00f;
+   color:#fff;
+   }
+.ybkg
+   {
+   background:#ff0;
+   color:#000;
+   }
+.text, .rbkg, .bbkg, .ybkg
+   {
+   font-size:18px;
+   }

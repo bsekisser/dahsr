@@ -1,0 +1,3 @@
+<ISINDEX ...>
+PROMPT: prompt string to show before the text entry area
+ACTION: the CGI to call

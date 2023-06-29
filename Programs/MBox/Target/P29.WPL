@@ -1,0 +1,12 @@
+<smil>
+<head><title>Media Box</title></head>
+<body>
+<seq>
+<media src="c:\media\audios\The 20s,Am I Blue,Ethel Waters,1929.mp3"/>
+<media src="c:\media\audios\The 20s,Deed I Do,Ruth Etting,1926.mp3"/>
+<media src="c:\media\audios\The 20s,Let Me Call You Sweetheart,Shannon Quartet (1926).mp3"/>
+<media src="c:\media\audios\The 20s,My Mother&apos;s Eyes,George Jessel (1929).mp3"/>
+<media src="c:\media\audios\The 20s,Some of These Days,Sophie Tucker (1927).mp3"/>
+</seq>
+</body>
+</smil>

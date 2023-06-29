@@ -1,0 +1,2 @@
+<BR ...>,"Line Break"
+CLEAR="LEFT/RIGHT/ALL/BOTH",Go past a picture or other object

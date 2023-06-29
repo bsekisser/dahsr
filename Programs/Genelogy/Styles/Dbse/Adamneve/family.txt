@@ -1,0 +1,30 @@
+[F],Adam & Eve
+[G],1
+[D],Progenitor,Adam*,b-4004 BC**,d-3074 BC***,m-
+[S],Eve*,b-,d-,p-
+[C],01,Cain,b-,d-
+[C],02,Abel****,b-,d-
+[C],03,Seth,b-,d-
+[N],*Progenitors of Joseph and Mary.
+[N],**Approximate time of the creation of Adam &amp; Eve.
+[N],***Lived 930 yrs. (Gen. 5:5)
+[N],****Had no heirs.
+[E]
+[G],2
+[D],01,Cain,b-,d-,m-
+[S],-,b-,d-,p-
+[E]
+[D],03,Seth,b-3874 BC,d-2962 BC,m-
+[S],-,b-,d-,p-
+[C],031,Enos,b-3769 BC,d-2864 BC
+[E]
+[G],3
+[D],031,Enos,b-3769 BC,d-2864 BC,m-
+[S],-,b-,d-,p-
+[C],0311,Cainan,b-3679,d-2769 BC
+[E]
+[G],4
+[D],0311,Cainan,b-3679 BC,d-2769 BC,m-
+[S],-,b-,d-,p-
+[C],03111,Mahalaleel,b-3609 BC,d-2714 BC
+[E]

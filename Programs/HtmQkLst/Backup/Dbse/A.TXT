@@ -1,0 +1,9 @@
+<A ...> "Anchor"
+HREF,URL you are linking to.
+NAME,Name a section of the page.
+TARGET="_blank/_parent/_self/_top",Window name which window the document should go in.
+TITLE,Suggested title for the document to be opened.
+onClick,Script to run when the user clicks on this anchor.
+onMouseOver,When the mouse is over the link.
+onMouseOut,When the mouse is no longer over the link.
+ACCESSKEY

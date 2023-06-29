@@ -1,0 +1,6 @@
+<SPACER ...>
+ALIGN = LEFT | RIGHT align left or right
+HEIGHT: how tall
+SIZE: how tall or wide
+TYPE = HORIZONTAL | VERTICAL | BLOCK what type of space is this
+WIDTH: how wide

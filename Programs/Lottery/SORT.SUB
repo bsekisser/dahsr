@@ -1,0 +1,233 @@
+DECLARE SUB TransferFiles ()
+DECLARE SUB Part2 ()
+DECLARE SUB Part1 ()
+DECLARE SUB Purge ()
+DECLARE SUB Sequent (s$)
+DECLARE SUB ReDate (i$)
+DECLARE SUB SayIt (i$, v%, f%, b%)
+DECLARE SUB Initialize ()
+DECLARE SUB Getkey (k$)
+DECLARE SUB Main ()
+    CONST BOOT = "lottery.bas", PRGM = "lottery"
+    CONST MXL = 76, WSZ = 17
+    COMMON SHARED Bgc%
+    COMMON SHARED Fgc%
+    COMMON SHARED Filename$
+    COMMON SHARED Flt%
+    COMMON SHARED Fwd$
+    COMMON SHARED Ln$, Ty$, Px$, Lo$, Hi$, Xp$, Xl$, Xh$
+    ON ERROR GOTO Trap
+    Initialize
+    Main
+    RUN "text" + Fwd$
+    RUN BOOT
+END
+Trap: Flt% = ERR: RESUME NEXT
+
+SUB Cuckoo
+    SOUND 1400, 3
+    SOUND 0, 2
+    SOUND 1155, 4
+    SOUND 0, 2
+END SUB
+
+SUB Getkey (k$)
+    DIM a%
+    DO: LOOP UNTIL INKEY$ = ""
+    DO
+    k$ = INKEY$
+    LOOP WHILE k$ = ""
+    a% = ASC(k$)
+    IF a% = 27 THEN END
+END SUB
+
+SUB Initialize
+    DIM i$, x%
+    Bgc% = 1
+    SELECT CASE UCASE$(RIGHT$(BOOT, 4))
+        CASE ".EXE": Fwd$ = ".mod"
+        CASE ELSE: Fwd$ = ".sub"
+    END SELECT
+    Fgc% = 15
+    Flt% = 0
+    CLOSE : OPEN PRGM + ".ini" FOR INPUT AS #1
+    IF Flt% = 0 THEN
+        WHILE NOT EOF(1)
+        LINE INPUT #1, i$
+        FOR x% = 1 TO LEN(i$)
+        SELECT CASE UCASE$(LEFT$(i$, x%))
+        END SELECT
+        NEXT
+        WEND
+    END IF
+    CLOSE
+END SUB
+
+SUB Main
+    DIM d$, i$, k$, s$
+    SayIt "É" + STRING$(78, 205) + "»", 21, 15, 4
+    SayIt LEFT$("º" + STRING$(25, 32) + "Sorting the Lottery Database!" + STRING$(40, 32), 79) + "º", 22, 15, 4
+    SayIt "È" + STRING$(78, 205) + "¼", 23, 15, 4
+    Purge
+    Flt% = 0
+    CLOSE : OPEN "games.txt" FOR INPUT AS #1
+    IF Flt% = 0 THEN
+        WHILE NOT EOF(1)
+        LINE INPUT #1, Filename$
+        IF LEN(Filename$) > 0 THEN
+            Part1
+            SHELL "sort part1.txt > part2.txt"
+            Part2
+            NAME "temp.txt" AS "sbse\" + Filename$
+        END IF
+        WEND
+        CLOSE
+        TransferFiles
+        KILL "part1.txt"
+        KILL "part2.txt"
+    ELSE
+        CLOSE
+        Flt% = 0
+        SayIt "É" + STRING$(78, 205) + "»", 21, 14, 4
+        SayIt LEFT$("º" + STRING$(3, 32) + "ù Cannot Find the " + CHR$(34) + "games.txt" + CHR$(34) + " File! ù ENTER " + CHR$(34) + BOOT + CHR$(34) + " ù ESC to End ù" + STRING$(80, 32), 79) + "º", 22, 14, 4
+        SayIt "È" + STRING$(78, 205) + "¼", 23, 14, 4
+        DO
+        Getkey k$
+        LOOP UNTIL k$ = CHR$(13)
+    END IF
+END SUB
+
+SUB Part1
+    DIM d$, s$
+    CLOSE #3: OPEN "dbse\" + Filename$ FOR INPUT AS #3
+    CLOSE #4: OPEN "part1.txt" FOR OUTPUT AS #4
+    INPUT #3, Ln$, Ty$, Px$, Lo$, Hi$
+    IF VAL(Ty$) = 3 THEN INPUT #3, Xp$, Xl$, Xh$
+    WHILE NOT EOF(3)
+    INPUT #3, d$
+    LINE INPUT #3, s$
+    ReDate d$
+    Sequent s$
+    PRINT #4, d$; ","; s$
+    WEND
+    CLOSE #3: CLOSE #4
+END SUB
+
+SUB Part2
+    DIM d$, i$, s$
+    OPEN "part2.txt" FOR INPUT AS #3
+    OPEN "temp.txt" FOR OUTPUT AS #4
+    PRINT #4, Ln$; ","; Ty$; ","; Px$; ","; Lo$; ","; Hi$;
+    IF VAL(Ty$) = 3 THEN
+        PRINT #4, ","; Xp$; ","; Xl$; ","; Xh$
+    ELSE
+        PRINT #4, ""
+    END IF
+    WHILE NOT EOF(3)
+    INPUT #3, i$
+    LINE INPUT #3, s$
+    d$ = MID$(i$, 3, 2) + "/" + RIGHT$(i$, 2) + "/" + LEFT$(i$, 2)
+    PRINT #4, d$; ","; s$
+    WEND
+    CLOSE #3: CLOSE #4
+END SUB
+
+SUB Purge
+    DIM i$
+    MKDIR "sbse"
+    SHELL "dir sbse > sbse.shl /B"
+    CLOSE
+    OPEN "sbse.shl" FOR INPUT AS #1
+    WHILE NOT EOF(1)
+    LINE INPUT #1, i$
+    SELECT CASE UCASE$(LEFT$(i$, 1))
+        CASE "0" TO "9", "A" TO "Z"
+            KILL "sbse\" + i$
+    END SELECT
+    WEND
+END SUB
+
+SUB ReDate (i$)
+    DIM d$, m$, x%, y$
+    m$ = MID$(STR$(VAL(i$)), 2)
+    FOR x% = 1 TO LEN(i$)
+    IF MID$(i$, x%, 1) = "/" THEN
+        IF d$ = "" THEN
+            d$ = MID$(STR$(VAL(MID$(i$, x% + 1))), 2)
+        ELSE
+            y$ = MID$(STR$(VAL(MID$(i$, x% + 1))), 2)
+            EXIT FOR
+        END IF
+    END IF
+    NEXT
+    i$ = RIGHT$("00" + y$, 2) + RIGHT$("00" + m$, 2) + RIGHT$("00" + d$, 2)
+END SUB
+
+SUB Rename
+
+END SUB
+
+SUB SayIt (i$, v%, f%, b%)
+    DIM h%, l$, r$, w%
+    w% = 40
+    SELECT CASE w%
+        CASE 38: h% = 3
+        CASE 39: h% = 2
+        CASE ELSE: h% = 1
+    END SELECT
+    l$ = LEFT$(i$, LEN(i$) / 2)
+    r$ = MID$(i$, LEN(l$) + 1)
+    l$ = RIGHT$(STRING$(w%, 32) + l$, w%)
+    r$ = LEFT$(r$ + STRING$(w%, 32), w%)
+    COLOR f%, b%
+    LOCATE v%, h%
+    PRINT l$; r$
+    COLOR Fgc%, Bgc%
+END SUB
+
+SUB Sequent (s$)
+    DIM n$, x%, y%
+    REDIM a(10)
+    IF VAL(Ty$) = 1 THEN
+        n$ = s$
+    ELSE
+        y% = 1
+        a(y%) = VAL(s$)
+        FOR x% = 1 TO LEN(s$)
+        IF MID$(s$, x%, 1) = "," THEN
+            y% = y% + 1
+            a(y%) = VAL(MID$(s$, x% + 1))
+        END IF
+        NEXT
+        FOR x% = 1 TO VAL(Px$)
+        FOR y% = x% TO VAL(Px$)
+        IF a(x%) > a(y%) THEN SWAP a(x%), a(y%)
+        NEXT
+        NEXT
+        FOR x% = 1 TO VAL(Px$)
+        n$ = n$ + RIGHT$("00" + MID$(STR$(a(x%)), 2), 2) + ","
+        NEXT
+        IF VAL(Ty$) = 3 THEN
+            n$ = n$ + RIGHT$("00" + MID$(STR$(a(x%)), 2), 2)
+        END IF
+        IF RIGHT$(n$, 1) = "," THEN n$ = LEFT$(n$, LEN(n$) - 1)
+    END IF
+    s$ = n$
+END SUB
+
+SUB TransferFiles
+    DIM f$
+    SHELL "dir sbse > sbse.shl /B"
+    CLOSE
+    OPEN "sbse.shl" FOR INPUT AS #1
+    WHILE NOT EOF(1)
+    LINE INPUT #1, f$
+    SELECT CASE UCASE$(LEFT$(f$, 1))
+        CASE "0" TO "9", "A" TO "Z"
+            KILL "dbse\" + f$
+            NAME "sbse\" + f$ AS "dbse\" + f$
+    END SELECT
+    WEND
+    CLOSE
+END SUB
+

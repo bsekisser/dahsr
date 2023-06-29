@@ -1,0 +1,17 @@
+<TABLE ...>
+BORDER: size of border around the table
+CELLPADDING: space between the edge of a cell and the contents
+CELLSPACING: space between cells
+WIDTH: width of the table as a whole
+BGCOLOR: color of the background
+BACKGROUND: picture to use as background
+ALIGN = LEFT | RIGHT alignment of table to surrounding text
+HSPACE: horizontal space between table and surrounding text
+VSPACE: vertical space between table and surrounding text
+HEIGHT: height of the table as a whole
+FRAME = VOID | BOX | BORDER | ABOVE | BELOW | LHS | RHS | HSIDES | VSIDES parts of outside border that are visible
+RULES = NONE | ALL | COLS | ROWS | GROUPS if there should be internal borders
+BORDERCOLOR: color of border around the table
+BORDERCOLORLIGHT: color of "light" part of border around the table
+BORDERCOLORDARK: color of "dark" part of border around the table
+SUMMARY: Summary of the purpose of the table

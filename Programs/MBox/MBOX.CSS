@@ -1,0 +1,30 @@
+A:link, A:visited, A:active
+    {color:#0000ff;}
+A:link, A:visited, A:active, A:hover
+    {text-decoration:none; font-style:italic; font-weight:bold;}
+A:hover {background-color:#ff0000; color:#ffffff;}
+
+A:link, A:visited, A:active, A:hover, .mhdr, .shdr, .mtxt, .stxt, .text, .rtxt, .gtxt, .btxt, .ytxt, .rbkg, gbkg, .bbkg, .ybkg, .shdd, .ital
+    {font-family:georgia, times new roman;}
+A:link, A:visited, A:active, A:hover, .text, .rtxt, .gtxt, .btxt, .ytxt, .rbkg, .gbkg, .bbkg, .ybkg, .shdd, .ital
+    {font-size:16;}
+
+.mhdr   {color:#ffffff; background:#0000ff; font-type:normal; font-weight:bold; font-size:30;}
+.shdr   {color:#000000; font-type:normal; font-weight:normal; font-size:14;}
+.mtxt   {color:#0000ff; font-type:normal; font-weight:bold; font-size:20;}
+.stxt   {color:#0000ff; font-type:normal; font-weight:bold; font-size:18;}
+.text   {color:#000000; font-type:normal; font-weight:normal;}
+.rtxt   {color:#ff0000; font-type:normal; font-weight:normal;}
+.gtxt   {color:#006600; font-type:normal; font-weight:normal;}
+.btxt   {color:#0000ff; font-type:normal; font-weight:normal;}
+.ytxt   {color:#ffff00; font-type:normal; font-weight:normal;}
+.rbkg   {color:#ffff00; background:#ff0000; font-type:bold; font-weight:bold;}
+.gbkg   {color:#ffffff; background:#006600; font-type:bold; font-weight:bold;}
+.bbkg   {color:#ffffff; background:#0000ff; font-type:bold; font-weight:bold;}
+.ybkg   {color:#000000; background:#ffff00; font-type:bold; font-weight:bold;}
+.shdd   {color:#000000; background:#dddddd; font-type:normal; font-weight:normal;}
+.ital   {color:#ffffff; background:#000000; font-type:italic; font-weight:normal; font-size:;12;}
+
+TABLE   {background:#ffffff}
+TD      {background:#ffffff}
+BODY    {background:#ddffcc;|

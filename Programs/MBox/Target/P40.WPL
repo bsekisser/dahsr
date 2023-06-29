@@ -1,0 +1,39 @@
+<smil>
+<head><title>Media Box</title></head>
+<body>
+<seq>
+<media src="c:\media\audios\Albums,Gospel,The Holy Bible,Old and New Testaments,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Country &amp; Western,Flowers on the Wall,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Country &amp; Western,This Ole House,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Album,The Holy Bible,Old and New Testaments,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Album,The Holy Bible,The New Testament,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Album,The Holy Bible,The Old Testament,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Amazing Grace,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Daddy Sang Bass,The Statler Brothers&apos; Dedication to Carl Perkins.mp3"/>
+<media src="c:\media\audios\Gospel,Feeling Mighty Fine,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Have a Little Talk With Jesus,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,How Great Thou Art,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,I Believe,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,I&apos;ll Fly Away,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,In the Garden,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,In the Sweet Bye n Bye,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Jesus is the Answer,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Jesus Needs Me,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Just a Little Talk with Jesus,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Lord&apos;s Prayer,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Love Lifted Me,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Loves Gonna Live Here Again,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,No Setting Sun,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Over the Sunset Mountain,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Power in the Blood,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Precious Memories,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Rock of Ages,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,The Old Rugged Cross,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,The Place Where I Worship,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,This Little Light of Mine,Brenda Lee,The Statler Brothers&apos; Show.mp3"/>
+<media src="c:\media\audios\Gospel,This Ol&apos; House,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,Turn Your Radio On,The Statler Brothers.mp3"/>
+<media src="c:\media\audios\Gospel,When the Roll is Called Up Yonder,The Statler Brothers.mp3"/>
+</seq>
+</body>
+</smil>

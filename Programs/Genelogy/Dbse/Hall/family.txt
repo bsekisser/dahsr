@@ -1,0 +1,38 @@
+[F],Hall
+[G]
+[D],Progenitor,John Hall Sr.*,b-1628,d-1660,m-1650
+[S],Mary Parker,b-1632,d-24 Dec 1699,p-William
+[C],A,John Hall,b-,d-
+[N],*Emigrated 1640
+[E]
+[G],2
+[D],A,Capt. John Hall,b-1658,d-Aug 1737,m-July 1693
+[S],Martha Beedle,b-1668,d-4 Feb 1719/20,p-Edward & Mary
+[C],A1,John,b-13 Jan 1693,d-infant
+[C],A2,Edward,b-15 Jul 1697,d-
+[C],A3,Sarah,b-,d-
+[C],A4,Aquila,b-,d-
+[C],A5,John,b-,d-
+[C],A6,John,b-,d-
+[C],A7,Parker,b-,d-
+[C],A8,Sophia,b-,d-
+[E]
+[G]
+[D],A2,Edward Hall,b-15 Jul 1697,d-,m-31 Oct 1717
+[S],Averilla Carvill,b-,d-1755,p-John & Mary Phillips
+[C],A21,John*,b-8 Jun 1719,d-17 Jul 1779
+[C],A22,Martha,b-,d-
+[N],*Aka John Hall of Cranberry
+[E]
+[G]
+[D],A21,John Hall of Cranberry,b-8 Jun 1719,d-15 Jul 1779,m-
+[S],Sarah Hughes (First Wife*),b-,d-,p-Samuel &amp; Jane Scott Watkins
+[C],A2111,John Hall (Hughes)**,b-,d-
+[N],*Marriage not recognised by the Church of England.
+[N],**John Hall (Hughes) was given the surname of his mother.
+[E]
+[D],A21,John Hall of Cranberry,b-8 Jun 1719,d-15 Jul 1779,m-9 Aug 1743
+[S],Bethia* Stansbury (Second Wife),b-1726,d-10 July 1780,p-
+[U]
+[N],*Some Documents record her name as &quot;Barthia&quot;.
+[E]

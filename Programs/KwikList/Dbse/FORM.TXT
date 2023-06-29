@@ -1,0 +1,8 @@
+<FORM ...>
+ACTION,URL of the CGI program
+ENCTYPE="multipart/form-data" "application/x-www-form-urlencoded" "text/plain",What type of form this is
+METHOD="GET/POST",How to transfer the data to the CGI
+NAME,Name of this form
+onReset,Script to run before the form is reset
+onSubmit,Script to run before the form is submitted
+TARGET="_blank/_parent/_self/_top/frame name",What frames to put the results in

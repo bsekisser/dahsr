@@ -1,0 +1,18 @@
+<smil>
+<head><title>Media Box</title></head>
+<body>
+<seq>
+<media src="c:\media\audios\The 30s,Deana Durbin,The Old Folks at Home.mp3"/>
+<media src="c:\media\audios\The 30s,It&apos;s June in January,Bing Crosby (1931).mp3"/>
+<media src="c:\media\audios\The 30s,Let Me Call You Sweetheart,Ethel Merman (1930).mp3"/>
+<media src="c:\media\audios\The 30s,Ol&apos; Rockin Chair&apos;s Got Me,Louis Armstrong &amp; Earl &apos;&apos;Fatha&apos;&apos; Hines.mp3"/>
+<media src="c:\media\audios\The 30s,Paul Robeson,My Old Kentucky Home.mp3"/>
+<media src="c:\media\audios\The 30s,Poor Old Joe,Paul Robeson.mp3"/>
+<media src="c:\media\audios\The 30s,Shine on Harvest Moon,Oliver Hardy (The Flying Deuces-1939).mp3"/>
+<media src="c:\media\audios\The 30s,The Old Folks at Home,Paul Robeson.mp3"/>
+<media src="c:\media\audios\The 30s,Til We Meet Again,Vera Lynn.mp3"/>
+<media src="c:\media\audios\The 30s,Trail of the Lonesome Pine,Laurel &amp; Hardy (Way Out West-1937).mp3"/>
+<media src="c:\media\audios\The 30s,Way Down South (in Dixie),Laurel &amp; Hardy (Way Out West-1937).mp3"/>
+</seq>
+</body>
+</smil>

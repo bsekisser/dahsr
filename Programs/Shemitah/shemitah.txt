@@ -1,0 +1,26 @@
+4004BC,Adam & Eve Created
+636AD,Mahammedans Rule Jerusalem (ended in 1948AD)
+1066AD,Battle of Hastings
+1215AD,Magna Carta
+1492AD,Columbus Discovered America
+1620AD,Pilgrims at Plymouth Rock
+1776AD,Revolutionary War Begins
+1789AD,Declaration of Independence
+1861AD,US Civil War Begins
+1865AD,US Civil War Ends
+1898AD,Spanish American War
+1914AD,WW1 Started
+1917AD,US Enters WW1
+1918AD,WW1 Ends
+1939AD,WW2 Started
+1941AD,US Enters WW2,US Declared War with Japan
+1944AD,Doug Sr. b-May 15
+1945AD,Kay b-Feb 10
+1945AD,WW2 Ends
+1948AD,Israel Becomes a Nation May 14
+1967AD,Israel Captures Jerusalem (Jun 7)
+1971AD,Doug Jr. b-Jan 22
+1977AD,Michael b-Feb 21
+1987AD,New York Stock Market Falls 508pts (22%)
+2001AD,New York City Twin Towers Attacked
+2008AD,New York Stock Market Falls 777pts (7%)
